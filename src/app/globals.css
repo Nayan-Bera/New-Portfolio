@@ -1,5 +1,5 @@
 /* app/globals.css - Tailwind v4 + Next.js 16 */
-@import "tailwindcss/preflight";
+@import "tailwindcss";
 @tailwind utilities;
 
 /* Custom variables and global rules */
