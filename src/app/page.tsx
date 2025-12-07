@@ -4,11 +4,27 @@ import { motion } from "framer-motion";
 import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { RiTwitterXLine } from "react-icons/ri";
 import Earth3D from "./components/earth3D";
-
+import { FaNodeJs, FaPython, FaDocker, FaAws } from "react-icons/fa6";
+import { 
+  SiMongodb, SiTypescript, SiRedis, SiKubernetes, 
+  SiGraphql, SiPostgresql
+} from "react-icons/si";
 // Mock data
 const HERO_CONTENT = "I design and build scalable backend systems that power modern applications. Specialized in distributed systems, real-time data processing, and cloud infrastructure.";
 const ABOUT_TEXT = "With over 8 years of experience in backend development, I've architected and delivered high-performance systems serving millions of users. My focus is on writing clean, maintainable code while solving complex technical challenges.";
 
+const techs = [
+  { name: "Node.js", icon: <FaNodeJs className="text-green-400" /> },
+  { name: "TypeScript", icon: <SiTypescript className="text-blue-400" /> },
+  { name: "Python", icon: <FaPython className="text-yellow-300" /> },
+  { name: "PostgreSQL", icon: <SiPostgresql className="text-sky-400" /> },
+  { name: "MongoDB", icon: <SiMongodb className="text-green-500" /> },
+  { name: "Redis", icon: <SiRedis className="text-red-400" /> },
+  { name: "Docker", icon: <FaDocker className="text-blue-300" /> },
+  { name: "Kubernetes", icon: <SiKubernetes className="text-blue-500" /> },
+  { name: "AWS", icon: <FaAws className="text-orange-400" /> },
+  { name: "GraphQL", icon: <SiGraphql className="text-pink-500" /> },
+];
 const PROJECTS = [
   {
     title: "Real-time Analytics Platform",
@@ -78,7 +94,7 @@ const Nav = () => (
 const Hero = () => (
   <header id="home" className="pt-32 pb-20 px-6 lg:px-8">
       <div className="absolute inset-0 pointer-events-none">
-      <div className="absolute top-1/2 -translate-y-1/2 left-[5%] w-[1000px] h-[600px] opacity-40">
+      <div className="absolute top-1/2 -translate-y-1/2 left-[5%] w-[1000px] h-[600px] opacity-35">
         <Earth3D />
       </div>
     </div>
@@ -256,34 +272,65 @@ const About = () => (
 );
 
 const Technologies = () => {
-  const techs = [
-    "Node.js", "TypeScript", "Python", "PostgreSQL", "MongoDB", 
-    "Redis", "Kafka", "Docker", "Kubernetes", "AWS", "GraphQL", "gRPC"
-  ];
-  
   return (
-    <section id="technologies" className="py-20 px-6 lg:px-8">
+    <section
+      id="technologies"
+      className="py-20 px-6 lg:px-8 bg-slate-950"
+    >
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl font-bold mb-8">Technology Stack</h2>
-        <div className="flex flex-wrap gap-3">
-          {techs.map((tech, i) => (
-            <motion.div
-              key={tech}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.05 }}
-              whileHover={{ y: -4 }}
-              className="px-5 py-2.5 rounded-lg bg-slate-800/50 border border-slate-700/50 text-sm font-medium text-slate-300 hover:border-slate-600 hover:bg-slate-800 transition-all cursor-default"
-            >
-              {tech}
-            </motion.div>
-          ))}
+        {/* Section title */}
+        <div className="flex items-center gap-3 mb-10">
+          <div className="h-px flex-1 bg-gradient-to-r from-transparent via-slate-800 to-transparent" />
+          <h2 className="text-sm font-semibold text-slate-400 uppercase tracking-wider">
+            Technology Stack
+          </h2>
+          <div className="h-px flex-1 bg-gradient-to-r from-transparent via-slate-800 to-transparent" />
+        </div>
+
+        {/* Now NO BOX AROUND THE SLIDER */}
+        <div className="relative w-full overflow-hidden">
+          <motion.div
+            className="flex gap-6 py-4"
+            initial={{ x: 0 }}
+            animate={{ x: "-100%" }}
+            transition={{
+              duration: 20,
+              repeat: Infinity,
+              ease: "linear",
+            }}
+          >
+            {[...techs, ...techs].map((tech, i) => (
+              <div
+                key={i}
+                className="flex items-center gap-2 px-5 py-3 rounded-xl
+                           bg-slate-900/60 border border-slate-800
+                           shadow-sm shadow-black/40
+                           hover:shadow-md hover:shadow-cyan-400/20
+                           backdrop-blur-sm cursor-default
+                           transition-all duration-300
+                           hover:scale-[1.03]"
+              >
+                <span className="text-xl">
+                  {tech.icon}
+                </span>
+                <span className="text-slate-100 font-medium">
+                  {tech.name}
+                </span>
+              </div>
+            ))}
+          </motion.div>
+
+          {/* Soft fade edges */}
+          <div className="pointer-events-none absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-slate-950 to-transparent" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-slate-950 to-transparent" />
         </div>
       </div>
     </section>
   );
 };
+
+
+
 
 const ProjectCard = ({ project, index }: { project: typeof PROJECTS[0]; index: number }) => (
   <motion.div
