@@ -5,13 +5,19 @@ import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { RiTwitterXLine } from "react-icons/ri";
 import Earth3D from "./components/earth3D";
 import { FaNodeJs, FaPython, FaDocker, FaAws } from "react-icons/fa6";
-import { 
-  SiMongodb, SiTypescript, SiRedis, SiKubernetes, 
-  SiGraphql, SiPostgresql
+import {
+  SiMongodb,
+  SiTypescript,
+  SiRedis,
+  SiKubernetes,
+  SiGraphql,
+  SiPostgresql,
 } from "react-icons/si";
 // Mock data
-const HERO_CONTENT = "I design and build scalable backend systems that power modern applications. Specialized in distributed systems, real-time data processing, and cloud infrastructure.";
-const ABOUT_TEXT = "With over 8 years of experience in backend development, I've architected and delivered high-performance systems serving millions of users. My focus is on writing clean, maintainable code while solving complex technical challenges.";
+const HERO_CONTENT =
+  "I design and build scalable backend systems that power modern applications. Specialized in distributed systems, real-time data processing, and cloud infrastructure.";
+const ABOUT_TEXT =
+  "With over 8 years of experience in backend development, I've architected and delivered high-performance systems serving millions of users. My focus is on writing clean, maintainable code while solving complex technical challenges.";
 
 const techs = [
   { name: "Node.js", icon: <FaNodeJs className="text-green-400" /> },
@@ -28,32 +34,36 @@ const techs = [
 const PROJECTS = [
   {
     title: "Real-time Analytics Platform",
-    description: "Built a distributed analytics system processing 50M+ events daily with sub-100ms latency using Kafka, Redis, and PostgreSQL.",
+    description:
+      "Built a distributed analytics system processing 50M+ events daily with sub-100ms latency using Kafka, Redis, and PostgreSQL.",
     technologies: ["Node.js", "Kafka", "Redis", "PostgreSQL", "Kubernetes"],
-    link: "#"
+    link: "#",
   },
   {
     title: "Microservices Migration",
-    description: "Led migration from monolith to microservices architecture, improving deployment velocity by 400% and reducing downtime to near-zero.",
+    description:
+      "Led migration from monolith to microservices architecture, improving deployment velocity by 400% and reducing downtime to near-zero.",
     technologies: ["Docker", "Kubernetes", "gRPC", "PostgreSQL", "Redis"],
-    link: "#"
+    link: "#",
   },
   {
     title: "API Gateway & Auth System",
-    description: "Designed OAuth2/JWT authentication system with rate limiting, serving 10M+ requests/day with 99.99% uptime.",
+    description:
+      "Designed OAuth2/JWT authentication system with rate limiting, serving 10M+ requests/day with 99.99% uptime.",
     technologies: ["Node.js", "Redis", "JWT", "OAuth2", "AWS"],
-    link: "#"
+    link: "#",
   },
   {
     title: "Event-Driven Order System",
-    description: "Architected event-sourced order processing pipeline handling 100K+ transactions daily with full audit trails.",
+    description:
+      "Architected event-sourced order processing pipeline handling 100K+ transactions daily with full audit trails.",
     technologies: ["Node.js", "RabbitMQ", "MongoDB", "Redis", "Docker"],
-    link: "#"
-  }
+    link: "#",
+  },
 ];
 
 const CONTACT = {
-  email: "nayan.bera@example.com"
+  email: "nayan.bera@example.com",
 };
 
 const Nav = () => (
@@ -61,29 +71,93 @@ const Nav = () => (
     <div className="max-w-7xl mx-auto px-6 lg:px-8">
       <div className="flex items-center justify-between h-16">
         <a href="#home" className="flex items-center gap-2 group">
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center">
+          <div className="w-8 h-8 rounded-lg bg-linear-to-br from-blue-500 to-cyan-500 flex items-center justify-center">
             <span className="text-white font-bold text-sm">NB</span>
           </div>
-          <span className="font-semibold text-base tracking-tight">Nayan Bera</span>
+          <span className="font-semibold text-base tracking-tight">
+            Nayan Bera
+          </span>
         </a>
 
         <ul className="hidden md:flex items-center gap-8 text-sm font-medium">
-          <li><a href="#about" className="text-slate-400 hover:text-white transition-colors">About</a></li>
-          <li><a href="#projects" className="text-slate-400 hover:text-white transition-colors">Projects</a></li>
-          <li><a href="#experience" className="text-slate-400 hover:text-white transition-colors">Experience</a></li>
-          <li><a href="#contact" className="px-4 py-2 rounded-lg bg-white text-slate-950 hover:bg-slate-200 transition-colors">Contact</a></li>
+          <li>
+            <a
+              href="#about"
+              className="text-slate-400 hover:text-white transition-colors"
+            >
+              About
+            </a>
+          </li>
+          <li>
+            <a
+              href="#projects"
+              className="text-slate-400 hover:text-white transition-colors"
+            >
+              Projects
+            </a>
+          </li>
+          <li>
+            <a
+              href="#experience"
+              className="text-slate-400 hover:text-white transition-colors"
+            >
+              Experience
+            </a>
+          </li>
+          <li>
+            <a
+              href="#contact"
+              className="px-4 py-2 rounded-lg bg-white text-slate-950 hover:bg-slate-200 transition-colors"
+            >
+              Contact
+            </a>
+          </li>
         </ul>
 
         <div className="hidden md:flex items-center gap-4 text-xl text-slate-400">
-          <a href="#" aria-label="twitter" className="hover:text-white transition-colors"><RiTwitterXLine /></a>
-          <a href="#" aria-label="linkedin" className="hover:text-white transition-colors"><FaLinkedin /></a>
-          <a href="#" aria-label="github" className="hover:text-white transition-colors"><FaGithub /></a>
-          <a href="#" aria-label="instagram" className="hover:text-white transition-colors"><FaInstagram /></a>
+          <a
+            href="#"
+            aria-label="twitter"
+            className="hover:text-white transition-colors"
+          >
+            <RiTwitterXLine />
+          </a>
+          <a
+            href="#"
+            aria-label="linkedin"
+            className="hover:text-white transition-colors"
+          >
+            <FaLinkedin />
+          </a>
+          <a
+            href="#"
+            aria-label="github"
+            className="hover:text-white transition-colors"
+          >
+            <FaGithub />
+          </a>
+          <a
+            href="#"
+            aria-label="instagram"
+            className="hover:text-white transition-colors"
+          >
+            <FaInstagram />
+          </a>
         </div>
 
         <button className="md:hidden text-slate-400">
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+          <svg
+            className="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M4 6h16M4 12h16M4 18h16"
+            />
           </svg>
         </button>
       </div>
@@ -93,43 +167,44 @@ const Nav = () => (
 
 const Hero = () => (
   <header id="home" className="pt-32 pb-20 px-6 lg:px-8">
-      <div className="absolute inset-0 pointer-events-none">
+    <div className="absolute inset-0 pointer-events-none">
       <div className="absolute top-1/2 -translate-y-1/2 left-[5%] w-[1000px] h-[600px] opacity-35">
         <Earth3D />
       </div>
     </div>
     <div className="max-w-7xl mx-auto">
       <div className="grid lg:grid-cols-2 gap-16 items-center">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }} 
-          animate={{ opacity: 1, y: 0 }} 
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-800/50 border border-slate-700/50 text-xs font-medium text-slate-300 mb-6">
             <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
             Available for new opportunities
           </div>
-          
+
           <h1 className="text-5xl lg:text-7xl font-bold tracking-tight mb-6">
-            Backend Engineer<br />
-            <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-teal-400 bg-clip-text text-transparent">
+            Backend Engineer
+            <br />
+            <span className="bg-linear-to-r from-blue-400 via-cyan-400 to-teal-400 bg-clip-text text-transparent">
               & System Architect
             </span>
           </h1>
-          
+
           <p className="text-lg text-slate-400 leading-relaxed mb-8 max-w-xl">
             {HERO_CONTENT}
           </p>
 
           <div className="flex flex-wrap gap-4">
-            <a 
-              href="#projects" 
+            <a
+              href="#projects"
               className="px-6 py-3 rounded-lg bg-white text-slate-950 font-medium hover:bg-slate-200 transition-all hover:shadow-lg hover:shadow-white/20"
             >
               View Projects
             </a>
-            <a 
-              href="#contact" 
+            <a
+              href="#contact"
               className="px-6 py-3 rounded-lg border border-slate-700 text-slate-300 font-medium hover:bg-slate-800 hover:border-slate-600 transition-all"
             >
               Get in Touch
@@ -137,36 +212,36 @@ const Hero = () => (
           </div>
         </motion.div>
 
-         <motion.div 
-                 initial={{ opacity: 0, scale: 0.95 }} 
-                 animate={{ opacity: 1, scale: 1 }} 
-                 transition={{ duration: 0.6, delay: 0.2 }}
-                 className="relative"
-               >
-                 <div className="grid grid-cols-2 gap-4">
-                   {[
-                     { label: "Real-time Systems", desc: "WebSockets, Kafka, Redis" },
-                     { label: "Cloud Infrastructure", desc: "AWS, K8s, Terraform" },
-                     { label: "Database Design", desc: "SQL, NoSQL, Optimization" },
-                     { label: "API Architecture", desc: "REST, GraphQL, gRPC" }
-                   ].map((item, i) => (
-                     <motion.div
-                       key={i}
-                       initial={{ opacity: 0, y: 20 }}
-                       animate={{ opacity: 1, y: 0 }}
-                       transition={{ delay: 0.3 + i * 0.1 }}
-                       className="p-5 rounded-xl bg-slate-800/50 border border-slate-700/50 hover:border-slate-600 transition-all group cursor-default"
-                     >
-                       <h3 className="font-semibold text-white mb-2 group-hover:text-cyan-400 transition-colors">
-                         {item.label}
-                       </h3>
-                       <p className="text-xs text-slate-400 leading-relaxed">
-                         {item.desc}
-                       </p>
-                     </motion.div>
-                   ))}
-                 </div>
-               </motion.div>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="relative"
+        >
+          <div className="grid grid-cols-2 gap-4">
+            {[
+              { label: "Real-time Systems", desc: "WebSockets, Kafka, Redis" },
+              { label: "Cloud Infrastructure", desc: "AWS, K8s, Terraform" },
+              { label: "Database Design", desc: "SQL, NoSQL, Optimization" },
+              { label: "API Architecture", desc: "REST, GraphQL, gRPC" },
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 + i * 0.1 }}
+                className="p-5 rounded-xl bg-slate-800/50 border border-slate-700/50 hover:border-slate-600 transition-all group cursor-default"
+              >
+                <h3 className="font-semibold text-white mb-2 group-hover:text-cyan-400 transition-colors">
+                  {item.label}
+                </h3>
+                <p className="text-xs text-slate-400 leading-relaxed">
+                  {item.desc}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </div>
   </header>
@@ -175,16 +250,18 @@ const Hero = () => (
 const About = () => (
   <section id="about" className="py-20 px-6 lg:px-8 bg-slate-900/30">
     <div className="max-w-7xl mx-auto">
-      <motion.div 
-        initial={{ opacity: 0 }} 
-        whileInView={{ opacity: 1 }} 
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
         <div className="flex items-center gap-3 mb-12">
-          <div className="h-px flex-1 bg-gradient-to-r from-transparent via-slate-700 to-transparent" />
-          <h2 className="text-sm font-semibold text-slate-400 uppercase tracking-wider">About</h2>
-          <div className="h-px flex-1 bg-gradient-to-r from-transparent via-slate-700 to-transparent" />
+          <div className="h-px flex-1 bg-linear-to-r from-transparent via-slate-700 to-transparent" />
+          <h2 className="text-sm font-semibold text-slate-400 uppercase tracking-wider">
+            About
+          </h2>
+          <div className="h-px flex-1 bg-linear-to-r from-transparent via-slate-700 to-transparent" />
         </div>
 
         <div className="grid lg:grid-cols-3 gap-12">
@@ -192,7 +269,7 @@ const About = () => (
             <p className="text-lg text-slate-300 leading-relaxed">
               {ABOUT_TEXT}
             </p>
-            
+
             <div className="grid md:grid-cols-2 gap-6 mt-8">
               <div className="space-y-4">
                 <h3 className="font-semibold text-white flex items-center gap-2">
@@ -214,7 +291,7 @@ const About = () => (
                   </li>
                 </ul>
               </div>
-              
+
               <div className="space-y-4">
                 <h3 className="font-semibold text-white flex items-center gap-2">
                   <div className="w-1 h-4 bg-blue-400 rounded-full" />
@@ -255,8 +332,8 @@ const About = () => (
                   <dd className="text-white font-medium">Senior Backend</dd>
                 </div>
                 <div className="pt-3 border-t border-slate-700/50">
-                  <a 
-                    href={`mailto:${CONTACT.email}`} 
+                  <a
+                    href={`mailto:${CONTACT.email}`}
                     className="text-cyan-400 hover:text-cyan-300 transition-colors text-sm font-medium"
                   >
                     {CONTACT.email}
@@ -273,18 +350,15 @@ const About = () => (
 
 const Technologies = () => {
   return (
-    <section
-      id="technologies"
-      className="py-20 px-6 lg:px-8 bg-slate-950"
-    >
+    <section id="technologies" className="py-20 px-6 lg:px-8 bg-slate-950">
       <div className="max-w-7xl mx-auto">
         {/* Section title */}
         <div className="flex items-center gap-3 mb-10">
-          <div className="h-px flex-1 bg-gradient-to-r from-transparent via-slate-800 to-transparent" />
+          <div className="h-px flex-1 bg-linear-to-r from-transparent via-slate-800 to-transparent" />
           <h2 className="text-sm font-semibold text-slate-400 uppercase tracking-wider">
             Technology Stack
           </h2>
-          <div className="h-px flex-1 bg-gradient-to-r from-transparent via-slate-800 to-transparent" />
+          <div className="h-px flex-1 bg-linear-to-r from-transparent via-slate-800 to-transparent" />
         </div>
 
         {/* Now NO BOX AROUND THE SLIDER */}
@@ -310,29 +384,28 @@ const Technologies = () => {
                            transition-all duration-300
                            hover:scale-[1.03]"
               >
-                <span className="text-xl">
-                  {tech.icon}
-                </span>
-                <span className="text-slate-100 font-medium">
-                  {tech.name}
-                </span>
+                <span className="text-xl">{tech.icon}</span>
+                <span className="text-slate-100 font-medium">{tech.name}</span>
               </div>
             ))}
           </motion.div>
 
           {/* Soft fade edges */}
-          <div className="pointer-events-none absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-slate-950 to-transparent" />
-          <div className="pointer-events-none absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-slate-950 to-transparent" />
+          <div className="pointer-events-none absolute inset-y-0 left-0 w-20 bg-linear-to-r from-slate-950 to-transparent" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 w-20 bg-linear-to-l from-slate-950 to-transparent" />
         </div>
       </div>
     </section>
   );
 };
 
-
-
-
-const ProjectCard = ({ project, index }: { project: typeof PROJECTS[0]; index: number }) => (
+const ProjectCard = ({
+  project,
+  index,
+}: {
+  project: (typeof PROJECTS)[0];
+  index: number;
+}) => (
   <motion.div
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
@@ -340,7 +413,7 @@ const ProjectCard = ({ project, index }: { project: typeof PROJECTS[0]; index: n
     transition={{ delay: index * 0.1 }}
     className="group relative"
   >
-    <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-cyan-500/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+    <div className="absolute inset-0 bg-linear-to-br from-blue-500/10 to-cyan-500/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
     <a
       href={project.link}
       className="relative block p-8 rounded-2xl bg-slate-800/30 border border-slate-700/50 hover:border-slate-600 transition-all"
@@ -349,24 +422,29 @@ const ProjectCard = ({ project, index }: { project: typeof PROJECTS[0]; index: n
         <h3 className="text-xl font-semibold text-white group-hover:text-cyan-400 transition-colors">
           {project.title}
         </h3>
-        <svg 
-          className="w-5 h-5 text-slate-400 group-hover:text-cyan-400 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" 
-          fill="none" 
-          stroke="currentColor" 
+        <svg
+          className="w-5 h-5 text-slate-400 group-hover:text-cyan-400 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all"
+          fill="none"
+          stroke="currentColor"
           viewBox="0 0 24 24"
         >
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17L17 7M17 7H7M17 7v10" />
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M7 17L17 7M17 7H7M17 7v10"
+          />
         </svg>
       </div>
-      
+
       <p className="text-slate-400 leading-relaxed mb-6">
         {project.description}
       </p>
 
       <div className="flex flex-wrap gap-2">
-        {project.technologies.map(tech => (
-          <span 
-            key={tech} 
+        {project.technologies.map((tech) => (
+          <span
+            key={tech}
             className="px-3 py-1 rounded-md bg-slate-700/30 border border-slate-700/50 text-xs font-medium text-slate-300"
           >
             {tech}
@@ -381,11 +459,13 @@ const ProjectsSection = () => (
   <section id="projects" className="py-20 px-6 lg:px-8 bg-slate-900/30">
     <div className="max-w-7xl mx-auto">
       <div className="flex items-center gap-3 mb-12">
-        <div className="h-px flex-1 bg-gradient-to-r from-transparent via-slate-700 to-transparent" />
-        <h2 className="text-sm font-semibold text-slate-400 uppercase tracking-wider">Selected Projects</h2>
-        <div className="h-px flex-1 bg-gradient-to-r from-transparent via-slate-700 to-transparent" />
+        <div className="h-px flex-1 bg-linear-to-r from-transparent via-slate-700 to-transparent" />
+        <h2 className="text-sm font-semibold text-slate-400 uppercase tracking-wider">
+          Selected Projects
+        </h2>
+        <div className="h-px flex-1 bg-linear-to-r from-transparent via-slate-700 to-transparent" />
       </div>
-      
+
       <div className="grid lg:grid-cols-2 gap-8">
         {PROJECTS.map((project, i) => (
           <ProjectCard key={project.title} project={project} index={i} />
@@ -400,30 +480,35 @@ const Experience = () => (
     <div className="max-w-7xl mx-auto">
       <h2 className="text-3xl font-bold mb-12">Experience</h2>
       <div className="space-y-8">
-        <motion.div 
-          initial={{ opacity: 0, x: -20 }} 
-          whileInView={{ opacity: 1, x: 0 }} 
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           className="relative pl-8 border-l-2 border-slate-700"
         >
           <div className="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-cyan-400 border-4 border-slate-950" />
           <div className="pb-8">
             <div className="flex flex-wrap items-center justify-between gap-4 mb-3">
-              <h4 className="text-xl font-semibold text-white">Senior Backend Engineer</h4>
+              <h4 className="text-xl font-semibold text-white">
+                Senior Backend Engineer
+              </h4>
               <span className="px-3 py-1 rounded-full bg-slate-800 text-xs font-medium text-slate-300">
                 2022 — Present
               </span>
             </div>
             <p className="text-cyan-400 font-medium mb-4">Acme Labs • Remote</p>
             <p className="text-slate-400 leading-relaxed">
-              Led backend development for the core analytics platform processing 50M+ daily events. Reduced API latency by 60% and improved system reliability to 99.99% uptime through architectural improvements and performance optimization.
+              Led backend development for the core analytics platform processing
+              50M+ daily events. Reduced API latency by 60% and improved system
+              reliability to 99.99% uptime through architectural improvements
+              and performance optimization.
             </p>
           </div>
         </motion.div>
 
-        <motion.div 
-          initial={{ opacity: 0, x: -20 }} 
-          whileInView={{ opacity: 1, x: 0 }} 
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
           className="relative pl-8 border-l-2 border-slate-700"
@@ -431,21 +516,27 @@ const Experience = () => (
           <div className="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-blue-400 border-4 border-slate-950" />
           <div className="pb-8">
             <div className="flex flex-wrap items-center justify-between gap-4 mb-3">
-              <h4 className="text-xl font-semibold text-white">Backend Engineer</h4>
+              <h4 className="text-xl font-semibold text-white">
+                Backend Engineer
+              </h4>
               <span className="px-3 py-1 rounded-full bg-slate-800 text-xs font-medium text-slate-300">
                 2019 — 2022
               </span>
             </div>
-            <p className="text-blue-400 font-medium mb-4">Nova Commerce • Bangalore</p>
+            <p className="text-blue-400 font-medium mb-4">
+              Nova Commerce • Bangalore
+            </p>
             <p className="text-slate-400 leading-relaxed">
-              Built and scaled microservices architecture handling 10M+ requests daily. Implemented event-driven systems with Kafka and designed RESTful APIs serving multiple frontend applications.
+              Built and scaled microservices architecture handling 10M+ requests
+              daily. Implemented event-driven systems with Kafka and designed
+              RESTful APIs serving multiple frontend applications.
             </p>
           </div>
         </motion.div>
 
-        <motion.div 
-          initial={{ opacity: 0, x: -20 }} 
-          whileInView={{ opacity: 1, x: 0 }} 
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
           className="relative pl-8"
@@ -453,14 +544,20 @@ const Experience = () => (
           <div className="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-slate-600 border-4 border-slate-950" />
           <div>
             <div className="flex flex-wrap items-center justify-between gap-4 mb-3">
-              <h4 className="text-xl font-semibold text-white">Full Stack Developer</h4>
+              <h4 className="text-xl font-semibold text-white">
+                Full Stack Developer
+              </h4>
               <span className="px-3 py-1 rounded-full bg-slate-800 text-xs font-medium text-slate-300">
                 2017 — 2019
               </span>
             </div>
-            <p className="text-slate-400 font-medium mb-4">TechStart Solutions • Mumbai</p>
+            <p className="text-slate-400 font-medium mb-4">
+              TechStart Solutions • Mumbai
+            </p>
             <p className="text-slate-400 leading-relaxed">
-              Developed full-stack applications using Node.js and React. Collaborated with cross-functional teams to deliver customer-facing features and improved application performance.
+              Developed full-stack applications using Node.js and React.
+              Collaborated with cross-functional teams to deliver
+              customer-facing features and improved application performance.
             </p>
           </div>
         </motion.div>
@@ -473,15 +570,17 @@ const Contact = () => (
   <section id="contact" className="py-20 px-6 lg:px-8 bg-slate-900/30">
     <div className="max-w-7xl mx-auto">
       <div className="flex items-center gap-3 mb-12">
-        <div className="h-px flex-1 bg-gradient-to-r from-transparent via-slate-700 to-transparent" />
-        <h2 className="text-sm font-semibold text-slate-400 uppercase tracking-wider">Get in Touch</h2>
-        <div className="h-px flex-1 bg-gradient-to-r from-transparent via-slate-700 to-transparent" />
+        <div className="h-px flex-1 bg-linear-to-r from-transparent via-slate-700 to-transparent" />
+        <h2 className="text-sm font-semibold text-slate-400 uppercase tracking-wider">
+          Get in Touch
+        </h2>
+        <div className="h-px flex-1 bg-linear-to-r from-transparent via-slate-700 to-transparent" />
       </div>
 
       <div className="grid lg:grid-cols-5 gap-12">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }} 
-          whileInView={{ opacity: 1, y: 0 }} 
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="lg:col-span-2 space-y-8"
         >
@@ -490,24 +589,36 @@ const Contact = () => (
               Let's build something great together
             </h3>
             <p className="text-slate-400 leading-relaxed">
-              I'm always interested in hearing about new projects and opportunities. Whether you have a question or just want to say hi, feel free to reach out.
+              I'm always interested in hearing about new projects and
+              opportunities. Whether you have a question or just want to say hi,
+              feel free to reach out.
             </p>
           </div>
 
           <div className="space-y-4">
-            <a 
+            <a
               href={`mailto:${CONTACT.email}`}
               className="flex items-center gap-3 text-slate-300 hover:text-white transition-colors group"
             >
               <div className="w-10 h-10 rounded-lg bg-slate-800 flex items-center justify-center group-hover:bg-slate-700 transition-colors">
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                <svg
+                  className="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                  />
                 </svg>
               </div>
               <span className="font-medium">{CONTACT.email}</span>
             </a>
 
-            <a 
+            <a
               href="#"
               className="flex items-center gap-3 text-slate-300 hover:text-white transition-colors group"
             >
@@ -517,7 +628,7 @@ const Contact = () => (
               <span className="font-medium">linkedin.com/in/nayanbera</span>
             </a>
 
-            <a 
+            <a
               href="#"
               className="flex items-center gap-3 text-slate-300 hover:text-white transition-colors group"
             >
@@ -529,9 +640,9 @@ const Contact = () => (
           </div>
         </motion.div>
 
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }} 
-          whileInView={{ opacity: 1, y: 0 }} 
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
           className="lg:col-span-3"
@@ -542,7 +653,7 @@ const Contact = () => (
                 <label className="block text-sm font-medium text-slate-300 mb-2">
                   Name
                 </label>
-                <input 
+                <input
                   type="text"
                   className="w-full px-4 py-3 rounded-lg bg-slate-900/50 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400 transition-colors"
                   placeholder="Your name"
@@ -553,7 +664,7 @@ const Contact = () => (
                 <label className="block text-sm font-medium text-slate-300 mb-2">
                   Email
                 </label>
-                <input 
+                <input
                   type="email"
                   className="w-full px-4 py-3 rounded-lg bg-slate-900/50 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400 transition-colors"
                   placeholder="you@example.com"
@@ -564,14 +675,14 @@ const Contact = () => (
                 <label className="block text-sm font-medium text-slate-300 mb-2">
                   Message
                 </label>
-                <textarea 
+                <textarea
                   rows={5}
                   className="w-full px-4 py-3 rounded-lg bg-slate-900/50 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400 transition-colors resize-none"
                   placeholder="Tell me about your project..."
                 />
               </div>
 
-              <button 
+              <button
                 type="button"
                 className="w-full px-6 py-3 rounded-lg bg-white text-slate-950 font-medium hover:bg-slate-200 transition-all hover:shadow-lg hover:shadow-white/20"
               >
