@@ -15,15 +15,16 @@ import {
 } from "react-icons/si";
 import Earth3D from "./components/earth3D";
 import { Contact } from "./components/contactUs";
+import Link from "next/link";
 
 // Mock data
-const HERO_CONTENT =
-  "I design and build scalable backend systems that power modern applications. Specialized in distributed systems, real-time data processing, and cloud infrastructure.";
+export const HERO_CONTENT =
+  "I design and build full-stack applications that blend seamless user experiences with powerful backend systems. Specialized in modern web development, API architecture, real-time features, and cloud-ready deployments.";
 
-const ABOUT_TEXT =
-  "With over 8 years of experience in backend development, I've architected and delivered high-performance systems serving millions of users. My focus is on writing clean, maintainable code while solving complex technical challenges.";
+export const ABOUT_TEXT =
+  "With 1+ years of backend and full-stack development experience, I build scalable application architectures, design modular service layers, and develop reliable APIs that integrate seamlessly across systems. I focus on clean, maintainable code and engineering practices that ensure performance, security, and long-term stability.";
 
-const techs = [
+export const techs = [
   { name: "Node.js", icon: <FaNodeJs className="text-green-400" /> },
   { name: "TypeScript", icon: <SiTypescript className="text-blue-400" /> },
   { name: "Python", icon: <FaPython className="text-yellow-300" /> },
@@ -36,11 +37,11 @@ const techs = [
   { name: "GraphQL", icon: <SiGraphql className="text-pink-500" /> },
 ];
 
-const PROJECTS = [
+export const PROJECTS = [
   {
     title: "Real-time Analytics Platform",
     description:
-      "Built a distributed analytics system processing 50M+ events daily with sub-100ms latency using Kafka, Redis, and PostgreSQL.",
+      "Built Link distributed analytics system processing 50M+ events daily with sub-100ms latency using Kafka, Redis, and PostgreSQL.",
     technologies: ["Node.js", "Kafka", "Redis", "PostgreSQL", "Kubernetes"],
     link: "#",
   },
@@ -67,8 +68,8 @@ const PROJECTS = [
   },
 ];
 
-const CONTACT = {
-  email: "nayanbera9@gmail.com",
+export const CONTACT = {
+  email: "nayanberaofficial@gmail.com",
 };
 
 const Nav = () => {
@@ -81,7 +82,7 @@ const Nav = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Top row */}
         <div className="flex items-center justify-between h-16">
-          <a
+          <Link
             href="#home"
             className="flex items-center gap-2 group"
             onClick={closeMenu}
@@ -92,74 +93,74 @@ const Nav = () => {
             <span className="font-semibold text-base tracking-tight">
               Nayan Bera
             </span>
-          </a>
+          </Link>
 
           {/* Desktop nav links */}
           <ul className="hidden md:flex items-center gap-8 text-sm font-medium">
             <li>
-              <a
+              <Link
                 href="#about"
                 className="text-slate-400 hover:text-white transition-colors"
               >
                 About
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="#projects"
                 className="text-slate-400 hover:text-white transition-colors"
               >
                 Projects
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="#experience"
                 className="text-slate-400 hover:text-white transition-colors"
               >
                 Experience
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="#contact"
                 className="px-4 py-2 rounded-lg bg-white text-slate-950 hover:bg-slate-200 transition-colors"
               >
                 Contact
-              </a>
+              </Link>
             </li>
           </ul>
 
           {/* Desktop social icons */}
           <div className="hidden md:flex items-center gap-4 text-xl text-slate-400">
-            <a
+            <Link
               href="#"
               aria-label="twitter"
               className="hover:text-white transition-colors"
             >
               <RiTwitterXLine />
-            </a>
-            <a
+            </Link>
+            <Link
               href="#"
               aria-label="linkedin"
               className="hover:text-white transition-colors"
             >
               <FaLinkedin />
-            </a>
-            <a
+            </Link>
+            <Link
               href="#"
               aria-label="github"
               className="hover:text-white transition-colors"
             >
               <FaGithub />
-            </a>
-            <a
+            </Link>
+            <Link
               href="#"
               aria-label="instagram"
               className="hover:text-white transition-colors"
             >
               <FaInstagram />
-            </a>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -205,72 +206,72 @@ const Nav = () => {
           <div className="md:hidden border-t border-slate-800 pb-4">
             <ul className="flex flex-col gap-3 pt-4 text-sm font-medium">
               <li>
-                <a
+                <Link
                   href="#about"
                   onClick={closeMenu}
                   className="block text-slate-300 hover:text-white transition-colors"
                 >
                   About
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="#projects"
                   onClick={closeMenu}
                   className="block text-slate-300 hover:text-white transition-colors"
                 >
                   Projects
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="#experience"
                   onClick={closeMenu}
                   className="block text-slate-300 hover:text-white transition-colors"
                 >
                   Experience
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="#contact"
                   onClick={closeMenu}
                   className="inline-flex items-center justify-center w-full px-4 py-2 rounded-lg bg-white text-slate-950 hover:bg-slate-200 transition-colors"
                 >
                   Contact
-                </a>
+                </Link>
               </li>
             </ul>
 
             <div className="flex items-center gap-4 pt-4 text-xl text-slate-400">
-              <a
+              <Link
                 href="#"
                 aria-label="twitter"
                 className="hover:text-white transition-colors"
               >
                 <RiTwitterXLine />
-              </a>
-              <a
+              </Link>
+              <Link
                 href="#"
                 aria-label="linkedin"
                 className="hover:text-white transition-colors"
               >
                 <FaLinkedin />
-              </a>
-              <a
+              </Link>
+              <Link
                 href="#"
                 aria-label="github"
                 className="hover:text-white transition-colors"
               >
                 <FaGithub />
-              </a>
-              <a
+              </Link>
+              <Link
                 href="#"
                 aria-label="instagram"
                 className="hover:text-white transition-colors"
               >
                 <FaInstagram />
-              </a>
+              </Link>
             </div>
           </div>
         )}
@@ -278,7 +279,6 @@ const Nav = () => {
     </nav>
   );
 };
-
 const Hero = () => (
   <header
     id="home"
@@ -309,7 +309,7 @@ const Hero = () => (
           </div>
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight mb-4 sm:mb-6">
-            Backend Engineer
+            Full-Stack Developer
             <br />
             <span className=" bg-linear-to-r from-blue-400 via-cyan-400 to-teal-400 bg-clip-text text-transparent">
               & System Architect
@@ -321,18 +321,18 @@ const Hero = () => (
           </p>
 
           <div className="flex flex-wrap gap-3 sm:gap-4">
-            <a
-              href="#projects"
+            <Link
+              href="/resume.pdf"
               className="px-5 sm:px-6 py-2.5 sm:py-3 rounded-lg bg-white text-slate-950 text-sm sm:text-base font-medium hover:bg-slate-200 transition-all hover:shadow-lg hover:shadow-white/20"
             >
-              View Projects
-            </a>
-            <a
+              View Resume
+            </Link>
+            <Link
               href="#contact"
               className="px-5 sm:px-6 py-2.5 sm:py-3 rounded-lg border border-slate-700 text-slate-300 text-sm sm:text-base font-medium hover:bg-slate-800 hover:border-slate-600 transition-all"
             >
               Get in Touch
-            </a>
+            </Link>
           </div>
         </motion.div>
 
@@ -345,10 +345,19 @@ const Hero = () => (
         >
           <div className="grid grid-cols-2 gap-3 sm:gap-4">
             {[
-              { label: "Real-time Systems", desc: "WebSockets, Kafka, Redis" },
-              { label: "Cloud Infrastructure", desc: "AWS, K8s, Terraform" },
-              { label: "Database Design", desc: "SQL, NoSQL, Optimization" },
-              { label: "API Architecture", desc: "REST, GraphQL, gRPC" },
+              {
+                label: "Real-Time Systems",
+                desc: "WebSockets, Live Updates, Event Workflows",
+              },
+              {
+                label: "Payments & Integrations",
+                desc: "Razorpay, reCAPTCHA, Third-Party APIs",
+              },
+              { label: "API Architecture", desc: "REST, GraphQL, Auth Flows" },
+              {
+                label: "Data Engineering",
+                desc: "SQL, NoSQL, Performance Optimization",
+              },
             ].map((item, i) => (
               <motion.div
                 key={i}
@@ -399,6 +408,7 @@ const About = () => (
             </p>
 
             <div className="grid md:grid-cols-2 gap-6 mt-6 sm:mt-8">
+              {/* Core Expertise */}
               <div className="space-y-4">
                 <h3 className="font-semibold text-white flex items-center gap-2 text-sm sm:text-base">
                   <div className="w-1 h-4 bg-cyan-400 rounded-full" />
@@ -407,19 +417,21 @@ const About = () => (
                 <ul className="space-y-2 text-xs sm:text-sm text-slate-400">
                   <li className="flex items-start gap-2">
                     <span className="text-cyan-400 mt-1">▸</span>
-                    Distributed systems & microservices architecture
+                    Backend API development and structured workflow engineering
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-cyan-400 mt-1">▸</span>
-                    High-performance APIs & data pipelines
+                    System architecture, module design, and schema modeling
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-cyan-400 mt-1">▸</span>
-                    Database optimization & query performance
+                    Secure integrations including authentication and payment
+                    services
                   </li>
                 </ul>
               </div>
 
+              {/* Focus Areas */}
               <div className="space-y-4">
                 <h3 className="font-semibold text-white flex items-center gap-2 text-sm sm:text-base">
                   <div className="w-1 h-4 bg-blue-400 rounded-full" />
@@ -428,15 +440,17 @@ const About = () => (
                 <ul className="space-y-2 text-xs sm:text-sm text-slate-400">
                   <li className="flex items-start gap-2">
                     <span className="text-blue-400 mt-1">▸</span>
-                    System design & scalability patterns
+                    Real-time features built with WebSockets and event workflows
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-blue-400 mt-1">▸</span>
-                    DevOps, CI/CD & infrastructure as code
+                    SQL/NoSQL data modeling, optimization, and performance
+                    tuning
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-blue-400 mt-1">▸</span>
-                    Monitoring, logging & observability
+                    DevOps processes with Docker, Dokploy, and Nixpacks
+                    deployments
                   </li>
                 </ul>
               </div>
@@ -458,22 +472,22 @@ const About = () => (
                 <div className="flex justify-between items-center gap-4">
                   <dt className="text-slate-400">Experience</dt>
                   <dd className="text-white font-medium text-right">
-                    8+ Years
+                    1+ Years
                   </dd>
                 </div>
                 <div className="flex justify-between items-center gap-4">
                   <dt className="text-slate-400">Role</dt>
                   <dd className="text-white font-medium text-right">
-                    Senior Backend
+                    Web Developer
                   </dd>
                 </div>
                 <div className="pt-3 border-t border-slate-700/50">
-                  <a
+                  <Link
                     href={`mailto:${CONTACT.email}`}
                     className="break-all text-cyan-400 hover:text-cyan-300 transition-colors text-xs sm:text-sm font-medium"
                   >
                     {CONTACT.email}
-                  </a>
+                  </Link>
                 </div>
               </dl>
             </div>
@@ -552,7 +566,7 @@ const ProjectCard = ({
     className="group relative"
   >
     <div className="absolute inset-0 bg-linear-to-br from-blue-500/10 to-cyan-500/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-    <a
+    <Link
       href={project.link}
       className="relative block p-6 sm:p-7 lg:p-8 rounded-2xl bg-slate-800/30 border border-slate-700/50 hover:border-slate-600 transition-all"
     >
@@ -589,7 +603,7 @@ const ProjectCard = ({
           </span>
         ))}
       </div>
-    </a>
+    </Link>
   </motion.div>
 );
 
@@ -718,10 +732,6 @@ const Experience = () => (
     </div>
   </section>
 );
-
-
-
-
 
 export default function Portfolio() {
   return (
