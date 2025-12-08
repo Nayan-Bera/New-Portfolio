@@ -21,7 +21,7 @@ export async function POST(req: Request) {
 
     const mailOptions = {
       from: `"Portfolio Contact" <${process.env.SMTP_FROM}>`,
-      to: process.env.SMTP_TO || process.env.SMTP_FROM, // where you receive it
+      to: process.env.SMTP_TO || process.env.SMTP_FROM, 
       subject: `New message from ${name}`,
       replyTo: email,
       text: `
