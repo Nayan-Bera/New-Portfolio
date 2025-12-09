@@ -1,21 +1,19 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { useState } from "react";
 import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
-import { FaAws, FaDocker, FaNodeJs, FaPython } from "react-icons/fa6";
-import { RiTwitterXLine } from "react-icons/ri";
+import { FaDocker, FaNodeJs, FaPython } from "react-icons/fa6";
+import { RiNextjsFill, RiReactjsLine, RiTwitterXLine } from "react-icons/ri";
 import {
   SiGraphql,
-  SiKubernetes,
   SiMongodb,
   SiPostgresql,
-  SiRedis,
   SiTypescript,
 } from "react-icons/si";
-import Earth3D from "./components/earth3D";
 import { Contact } from "./components/contactUs";
-import Link from "next/link";
+import Earth3D from "./components/earth3D";
 
 // Mock data
 export const HERO_CONTENT =
@@ -30,41 +28,93 @@ export const techs = [
   { name: "Python", icon: <FaPython className="text-yellow-300" /> },
   { name: "PostgreSQL", icon: <SiPostgresql className="text-sky-400" /> },
   { name: "MongoDB", icon: <SiMongodb className="text-green-500" /> },
-  { name: "Redis", icon: <SiRedis className="text-red-400" /> },
+  // { name: "Redis", icon: <SiRedis className="text-red-400" /> },
   { name: "Docker", icon: <FaDocker className="text-blue-300" /> },
-  { name: "Kubernetes", icon: <SiKubernetes className="text-blue-500" /> },
-  { name: "AWS", icon: <FaAws className="text-orange-400" /> },
+  { name: "React.js", icon: <RiReactjsLine className="text-blue-500" /> },
+  { name: "Next.js", icon: <RiNextjsFill className="text-gray-300" /> },
+  // { name: "Kubernetes", icon: <SiKubernetes className="text-blue-500" /> },
+  // { name: "AWS", icon: <FaAws className="text-orange-400" /> },
   { name: "GraphQL", icon: <SiGraphql className="text-pink-500" /> },
 ];
 
 export const PROJECTS = [
   {
-    title: "Real-time Analytics Platform",
+    title: "Tripzy — Smart Hotel Booking System",
     description:
-      "Built Link distributed analytics system processing 50M+ events daily with sub-100ms latency using Kafka, Redis, and PostgreSQL.",
-    technologies: ["Node.js", "Kafka", "Redis", "PostgreSQL", "Kubernetes"],
+      "A full hotel booking platform with automated document verification, secure JWT-based access, digital check-ins, and integrated Razorpay payment workflows.",
+    technologies: [
+      "Node.js",
+      "TypeScript",
+      "React.js",
+      "JWT",
+      "Razorpay",
+      "REST API",
+    ],
     link: "#",
   },
   {
-    title: "Microservices Migration",
+    title: "ProctorLive — Online Exam & Monitoring System",
     description:
-      "Led migration from monolith to microservices architecture, improving deployment velocity by 400% and reducing downtime to near-zero.",
-    technologies: ["Docker", "Kubernetes", "gRPC", "PostgreSQL", "Redis"],
+      "A secure examination platform with live monitoring, keyboard lock, candidate event tracking, quick results, and real-time updates powered by WebSockets and JWT.",
+    technologies: [
+      "Node.js",
+      "TypeScript",
+      "React.js",
+      "WebSockets",
+      "JWT",
+      "REST API",
+    ],
     link: "#",
   },
   {
-    title: "API Gateway & Auth System",
+    title: "StaySphere — PG & Hostel Finder Platform",
     description:
-      "Designed OAuth2/JWT authentication system with rate limiting, serving 10M+ requests/day with 99.99% uptime.",
-    technologies: ["Node.js", "Redis", "JWT", "OAuth2", "AWS"],
+      "A property discovery and management platform enabling PG/hostel providers to manage listings while users search, filter, and book stays with secure payments and reCAPTCHA-protected authentication.",
+    technologies: [
+      "Node.js",
+      "TypeScript",
+      "React.js",
+      "RTK Query",
+      "Razorpay",
+      "reCAPTCHA",
+      "JWT",
+    ],
     link: "#",
   },
   {
-    title: "Event-Driven Order System",
+    title: "NexaFlow CRM — Role-Based Operations & Workflow Manager",
     description:
-      "Architected event-sourced order processing pipeline handling 100K+ transactions daily with full audit trails.",
-    technologies: ["Node.js", "RabbitMQ", "MongoDB", "Redis", "Docker"],
+      "A modular CRM solution featuring role-based access control, task pipelines, team collaboration tools, and automated workflow management with scalable backend architecture.",
+    technologies: ["Next.js", "TypeScript", "RBAC", "REST API"],
     link: "#",
+  },
+];
+
+const EXPERIENCE = [
+  {
+    role: "Full-Stack Web Developer",
+    company: "Maity Innovations Pvt Ltd",
+    period: "2025 — Present",
+    color: "cyan",
+    description: [
+      "Built multiple full-stack applications, handling both frontend and backend modules.",
+      "Designed and implemented a multi-tenant SaaS platform with role-based access control and modular architecture.",
+      "Managed Docker containers, created project-specific images, and monitored deployments on Dokploy.",
+      "Integrated Razorpay, optimized CI/CD flows, and improved environment setups for production stability.",
+      "Reviewed and merged branches, mentored teammates on backend fundamentals, and improved project workflows.",
+    ],
+  },
+  {
+    role: "Web Developer Intern",
+    company: "Maity Innovations Pvt Ltd",
+    period: "2024 — 2025",
+    color: "blue",
+    description: [
+      "Built dynamic Laravel applications including admin dashboards and CMS modules.",
+      "Developed backend services in Node.js using JWT and reCAPTCHA with optimized search endpoints and scalable API design.",
+      "Delivered responsive UI pages using HTML, CSS, and JavaScript.",
+      "Collaborated with senior developers to refine architecture and improve maintainability.",
+    ],
   },
 ];
 
@@ -644,90 +694,47 @@ const Experience = () => (
         <div className="h-px flex-1 bg-linear-to-r from-transparent via-slate-700 to-transparent" />
       </div>
 
-      <div className="space-y-6 sm:space-y-8">
-        <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          className="relative pl-6 sm:pl-8 border-l-2 border-slate-700"
-        >
-          <div className="absolute -left-2 sm:left-[-9px] top-0 w-3.5 h-3.5 sm:w-4 sm:h-4 rounded-full bg-cyan-400 border-[3px] sm:border-4 border-slate-950" />
-          <div className="pb-6 sm:pb-8">
-            <div className="flex flex-wrap items-center justify-between gap-2 sm:gap-4 mb-2 sm:mb-3">
-              <h4 className="text-lg sm:text-xl font-semibold text-white">
-                Senior Backend Engineer
-              </h4>
-              <span className="px-3 py-1 rounded-full bg-slate-800 text-[11px] sm:text-xs font-medium text-slate-300">
-                2022 — Present
-              </span>
-            </div>
-            <p className="text-xs sm:text-sm text-cyan-400 font-medium mb-3 sm:mb-4">
-              Acme Labs • Remote
-            </p>
-            <p className="text-sm sm:text-base text-slate-400 leading-relaxed">
-              Led backend development for the core analytics platform processing
-              50M+ daily events. Reduced API latency by 60% and improved system
-              reliability to 99.99% uptime through architectural improvements
-              and performance optimization.
-            </p>
-          </div>
-        </motion.div>
+      <div className="space-y-8">
+        {EXPERIENCE.map((item, i) => (
+          <motion.div
+            key={i}
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ delay: i * 0.1 }}
+            className="relative pl-6 sm:pl-8 border-l-2 border-slate-700"
+          >
+            <div
+              className={`absolute -left-2 sm:left-[-9px] top-0 w-3.5 h-3.5 sm:w-4 sm:h-4 rounded-full bg-${item.color}-400 border-[3px] sm:border-4 border-slate-950`}
+            />
 
-        <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ delay: 0.1 }}
-          className="relative pl-6 sm:pl-8 border-l-2 border-slate-700"
-        >
-          <div className="absolute -left-2 sm:left-[-9px] top-0 w-3.5 h-3.5 sm:w-4 sm:h-4 rounded-full bg-blue-400 border-[3px] sm:border-4 border-slate-950" />
-          <div className="pb-6 sm:pb-8">
-            <div className="flex flex-wrap items-center justify-between gap-2 sm:gap-4 mb-2 sm:mb-3">
-              <h4 className="text-lg sm:text-xl font-semibold text-white">
-                Backend Engineer
-              </h4>
-              <span className="px-3 py-1 rounded-full bg-slate-800 text-[11px] sm:text-xs font-medium text-slate-300">
-                2019 — 2022
-              </span>
-            </div>
-            <p className="text-xs sm:text-sm text-blue-400 font-medium mb-3 sm:mb-4">
-              Nova Commerce • Bangalore
-            </p>
-            <p className="text-sm sm:text-base text-slate-400 leading-relaxed">
-              Built and scaled microservices architecture handling 10M+ requests
-              daily. Implemented event-driven systems with Kafka and designed
-              RESTful APIs serving multiple frontend applications.
-            </p>
-          </div>
-        </motion.div>
+            <div className="pb-6 sm:pb-8">
+              <div className="flex flex-wrap items-center justify-between gap-2 sm:gap-4 mb-2 sm:mb-3">
+                <h4 className="text-lg sm:text-xl font-semibold text-white">
+                  {item.role}
+                </h4>
+                <span className="px-3 py-1 rounded-full bg-slate-800 text-[11px] sm:text-xs font-medium text-slate-300">
+                  {item.period}
+                </span>
+              </div>
 
-        <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ delay: 0.2 }}
-          className="relative pl-6 sm:pl-8"
-        >
-          <div className="absolute -left-2 sm:left-[-9px] top-0 w-3.5 h-3.5 sm:w-4 sm:h-4 rounded-full bg-slate-600 border-[3px] sm:border-4 border-slate-950" />
-          <div>
-            <div className="flex flex-wrap items-center justify-between gap-2 sm:gap-4 mb-2 sm:mb-3">
-              <h4 className="text-lg sm:text-xl font-semibold text-white">
-                Full Stack Developer
-              </h4>
-              <span className="px-3 py-1 rounded-full bg-slate-800 text-[11px] sm:text-xs font-medium text-slate-300">
-                2017 — 2019
-              </span>
+              <p
+                className={`text-xs sm:text-sm text-${item.color}-400 font-medium mb-3 sm:mb-4`}
+              >
+                {item.company}
+              </p>
+
+              {item.description.map((line, idx) => (
+                <p
+                  key={idx}
+                  className="text-sm sm:text-base text-slate-400 leading-relaxed"
+                >
+                  {line}
+                </p>
+              ))}
             </div>
-            <p className="text-xs sm:text-sm text-slate-400 font-medium mb-3 sm:mb-4">
-              TechStart Solutions • Mumbai
-            </p>
-            <p className="text-sm sm:text-base text-slate-400 leading-relaxed">
-              Developed full-stack applications using Node.js and React.
-              Collaborated with cross-functional teams to deliver
-              customer-facing features and improved application performance.
-            </p>
-          </div>
-        </motion.div>
+          </motion.div>
+        ))}
       </div>
     </div>
   </section>
