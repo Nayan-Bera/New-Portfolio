@@ -1,87 +1,118 @@
-import { StaticImageData } from "next/image";
-import project1 from "../assets/projects/project-1.png";
-import project2 from "../assets/projects/project-2.jpg";
-import project3 from "../assets/projects/project-3.jpg";
-import project4 from "../assets/projects/project-4.jpg";
-export interface Project {
-  title: string;
-  image?: string | StaticImageData | null;
-  description: string;
-  technologies: string[];
-  link?: string;
-}
 
-export const HERO_CONTENT = `I am a passionate back end developer with a knack for crafting robust and scalable web applications.  I have honed my skills in  back-end technologies like Node.js, MySQL, and MongoDB, as well as learning front-end technologies like React and Next.js . My goal is to become a full stack devloper and leverage my expertise to create innovative solutions that drive business growth and deliver good user experiences.`;
+import { FaDocker, FaNodeJs, FaPython } from "react-icons/fa6";
+import { RiNextjsFill, RiReactjsLine, RiTwitterXLine } from "react-icons/ri";
+import {
+  SiGraphql,
+  SiMongodb,
+  SiPostgresql,
+  SiTypescript,
+} from "react-icons/si";
 
-export const ABOUT_TEXT = `I am a dedicated and versatile back end developer with a passion for creating efficient and user-friendly web applications. I have worked with a variety of technologies, including React, Node.js, MySQL, and MongoDB. My journey in web development began with a deep curiosity for how things work, and it has evolved into a career where I continuously strive to learn and adapt to new challenges. I thrive in collaborative environments and enjoy solving complex problems to deliver high-quality solutions. Outside of coding, I enjoy playing video games, exploring new technologies, and contributing to open-source projects.`;
+export const HERO_CONTENT =
+  "I design and build full-stack applications that blend seamless user experiences with powerful backend systems. Specialized in modern web development, API architecture, real-time features, and cloud-ready deployments.";
 
-export const EXPERIENCES = [
-  {
-    year: 2024-2025,
-    role: "Web Developer Intern",
-    company: "Maity Innovations Pvt. Ltd",
-    description:"" ,
-    technologies:""
-  },
-  {
-    year: "2025-2025", 
-    role: "Web Developer",
-    company:" Maity Innovations Pvt. Ltd",
-    description: "",
-    technologies:"",
-  },
-  // {
-  //   year: 
-  //   role:
-  //   company: 
-  //   description: 
-  //   technologies:
-  // },
-  // {
-  //   year: 
-  //   role: 
-  //   company: 
-  //   description: 
-  //   technologies: 
-  // },
+export const ABOUT_TEXT =
+  "With 1+ years of backend and full-stack development experience, I build scalable application architectures, design modular service layers, and develop reliable APIs that integrate seamlessly across systems. I focus on clean, maintainable code and engineering practices that ensure performance, security, and long-term stability.";
+
+export const techs = [
+  { name: "Node.js", icon: <FaNodeJs className="text-green-400" /> },
+  { name: "TypeScript", icon: <SiTypescript className="text-blue-400" /> },
+  { name: "Python", icon: <FaPython className="text-yellow-300" /> },
+  { name: "PostgreSQL", icon: <SiPostgresql className="text-sky-400" /> },
+  { name: "MongoDB", icon: <SiMongodb className="text-green-500" /> },
+  // { name: "Redis", icon: <SiRedis className="text-red-400" /> },
+  { name: "Docker", icon: <FaDocker className="text-blue-300" /> },
+  { name: "React.js", icon: <RiReactjsLine className="text-blue-500" /> },
+  { name: "Next.js", icon: <RiNextjsFill className="text-gray-300" /> },
+  // { name: "Kubernetes", icon: <SiKubernetes className="text-blue-500" /> },
+  // { name: "AWS", icon: <FaAws className="text-orange-400" /> },
+  { name: "GraphQL", icon: <SiGraphql className="text-pink-500" /> },
 ];
 
 export const PROJECTS = [
   {
-    title: "Online Exam Portal",
-    image: project1,
+    title: "Tripzy — Smart Hotel Booking System",
     description:
-      "A fully functional exam taking website with features like Selective candidates can give the exam , Automated Grading , Remote Monitoring.",
-    technologies: ["HTML", "CSS", "React", "Node.js", "MongoDB", "Yarn"],
-    link:""
+      "A full hotel booking platform with automated document verification, secure JWT-based access, digital check-ins, and integrated Razorpay payment workflows.",
+    technologies: [
+      "Node.js",
+      "TypeScript",
+      "React.js",
+      "JWT",
+      "Razorpay",
+      "REST API",
+    ],
+    link: "#",
   },
   {
-    title: "Task Management App",
-    image: project2,
+    title: "ProctorLive — Online Exam & Monitoring System",
     description:
-      "An application for managing tasks and projects, with features such as task creation, assignment, and progress tracking.",
-    technologies: ["HTML", "CSS", "Angular", "Firebase"],
-    link:""
+      "A secure examination platform with live monitoring, keyboard lock, candidate event tracking, quick results, and real-time updates powered by WebSockets and JWT.",
+    technologies: [
+      "Node.js",
+      "TypeScript",
+      "React.js",
+      "WebSockets",
+      "JWT",
+      "REST API",
+    ],
+    link: "#",
   },
   {
-    title: "Portfolio Website",
-    image: project3,
+    title: "StaySphere — PG & Hostel Finder Platform",
     description:
-      "A personal portfolio website showcasing projects, skills, and contact information.",
-    technologies: ["HTML", "CSS", "React", "TalwindCSS"],
-    link:""
+      "A property discovery and management platform enabling PG/hostel providers to manage listings while users search, filter, and book stays with secure payments and reCAPTCHA-protected authentication.",
+    technologies: [
+      "Node.js",
+      "TypeScript",
+      "React.js",
+      "RTK Query",
+      "Razorpay",
+      "reCAPTCHA",
+      "JWT",
+    ],
+    link: "#",
   },
   {
-    title: "Blogging Platform",
-    image: project4,
+    title: "NexaFlow CRM — Role-Based Operations & Workflow Manager",
     description:
-      "A platform for creating and publishing blog posts, with features like rich text editing, commenting, and user profiles.",
-    technologies: ["HTML", "CSS", "Express", "mySQL"],
-    link:""
+      "A modular CRM solution featuring role-based access control, task pipelines, team collaboration tools, and automated workflow management with scalable backend architecture.",
+    technologies: ["Next.js", "TypeScript", "RBAC", "REST API"],
+    link: "#",
   },
 ];
 
+export const EXPERIENCE = [
+  {
+    role: "Full-Stack Web Developer",
+    company: "Maity Innovations Pvt Ltd",
+    period: "2025 — Present",
+    dotClass: "bg-cyan-400",
+    companyClass: "text-cyan-400",
+    description: [
+      "Built multiple full-stack applications, handling both frontend and backend modules.",
+      "Designed and implemented a multi-tenant SaaS platform with role-based access control and modular architecture.",
+      "Managed Docker containers, created project-specific images, and monitored deployments on Dokploy.",
+      "Integrated Razorpay, optimized CI/CD flows, and improved environment setups for production stability.",
+      "Reviewed and merged branches, mentored teammates on backend fundamentals, and improved project workflows.",
+    ],
+  },
+  {
+    role: "Web Developer Intern",
+    company: "Maity Innovations Pvt Ltd",
+    period: "2024 — 2025",
+    dotClass: "bg-blue-400",
+    companyClass: "text-blue-400",
+    description: [
+      "Built dynamic Laravel applications including admin dashboards and CMS modules.",
+      "Developed backend services in Node.js using JWT and reCAPTCHA with optimized search endpoints and scalable API design.",
+      "Delivered responsive UI pages using HTML, CSS, and JavaScript.",
+      "Collaborated with senior developers to refine architecture and improve maintainability.",
+    ],
+  },
+];
+
+
 export const CONTACT = {
-  address: "School Bazar , Midnapore , Paschim Medinipur , West Bengal, India , Pin:-721101 ",
   email: "nayanberaofficial@gmail.com",
 };
