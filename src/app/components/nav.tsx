@@ -155,10 +155,14 @@ export const Nav = () => {
       </nav>
 
       {/* MOBILE BOTTOM NAVIGATION */}
-      <div className="md:hidden fixed inset-x-0 bottom-4 z-50 flex justify-center pointer-events-none">
-        <div className="relative w-full max-w-xs px-4">
+      {/* MOBILE BOTTOM NAVIGATION */}
+      <div className="md:hidden fixed inset-x-0 bottom-0 z-50 flex justify-center pointer-events-none">
+        {/* Subtle gradient fade for depth */}
+        <div className="absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none"></div>
+
+        <div className="relative w-full max-w-xs px-4 mb-6">
           {/* Curved pill background */}
-          <div className="pointer-events-auto bg-slate-900/95 border border-slate-700 rounded-3xl shadow-lg shadow-black/40 px-4 py-2 flex items-center justify-between">
+          <div className="pointer-events-auto bg-slate-900/95 border border-slate-700 rounded-3xl shadow-xl shadow-black/50 backdrop-blur-md px-4 py-2 flex items-center justify-between">
             {[
               { id: "home", icon: <FiHome /> },
               { id: "about", icon: <FiUser /> },
@@ -177,9 +181,9 @@ export const Nav = () => {
                   }`}
                 >
                   <div
-                    className={`flex items-center justify-center text-base w-10 h-10 ${
+                    className={`flex items-center justify-center text-base w-10 h-10 transition-all ${
                       isActive
-                        ? "bg-cyan-500 text-slate-950 rounded-full shadow-md shadow-emerald-500/50"
+                        ? "bg-cyan-500 text-slate-950 rounded-full shadow-lg shadow-cyan-500/40"
                         : "text-slate-400"
                     }`}
                   >
