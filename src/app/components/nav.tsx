@@ -1,185 +1,122 @@
-'use client';
+"use client";
+
+import { useEffect, useState } from "react";
 import Link from "next/link";
-import { useState } from "react";
 import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { RiTwitterXLine } from "react-icons/ri";
+import { FiHome, FiUser, FiFolder, FiBriefcase, FiMail } from "react-icons/fi";
+
+const SECTIONS = [
+  { id: "home", label: "Home" },
+  { id: "about", label: "About" },
+  { id: "projects", label: "Projects" },
+  { id: "experience", label: "Experience" },
+  { id: "contact", label: "Contact" },
+];
 
 export const Nav = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState<string>("home");
 
-  const closeMenu = () => setIsOpen(false);
+  // Scroll spy – detect which section is in view
+  useEffect(() => {
+    const ids = SECTIONS.map((s) => s.id);
+    const elements = ids
+      .map((id) => document.getElementById(id))
+      .filter(Boolean) as HTMLElement[];
+
+    if (!elements.length) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((e) => e.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+        if (visible?.target?.id) {
+          setActiveSection(visible.target.id);
+        }
+      },
+      {
+        threshold: [0.3, 0.5],
+      }
+    );
+
+    elements.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+
+  const handleScrollTo = (id: string) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
+  const desktopLinkClasses = (id: string) =>
+    `transition-colors ${
+      activeSection === id ? "text-white" : "text-slate-400 hover:text-white"
+    }`;
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-xl border-b border-slate-800/50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Top row */}
-        <div className="flex items-center justify-between h-16">
-          <Link
-            href="#home"
-            className="flex items-center gap-2 group"
-            onClick={closeMenu}
-          >
-            <div className="w-8 h-8 rounded-lg bg-linear-to-br from-blue-500 to-cyan-500 flex items-center justify-center">
-              <span className="text-white font-bold text-sm">NB</span>
-            </div>
-            <span className="font-semibold text-base tracking-tight">
-              Nayan Bera
-            </span>
-          </Link>
-
-          {/* Desktop nav links */}
-          <ul className="hidden md:flex items-center gap-8 text-sm font-medium">
-            <li>
-              <Link
-                href="#about"
-                className="text-slate-400 hover:text-white transition-colors"
-              >
-                About
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="#projects"
-                className="text-slate-400 hover:text-white transition-colors"
-              >
-                Projects
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="#experience"
-                className="text-slate-400 hover:text-white transition-colors"
-              >
-                Experience
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="#contact"
-                className="px-4 py-2 rounded-lg bg-white text-slate-950 hover:bg-slate-200 transition-colors"
-              >
-                Contact
-              </Link>
-            </li>
-          </ul>
-
-          {/* Desktop social icons */}
-          <div className="hidden md:flex items-center gap-4 text-xl text-slate-400">
-            <Link
-              href="https://x.com/NayanBe68620646"
-              aria-label="twitter"
-              target="_blank"
-              className="hover:text-white transition-colors"
+    <>
+      {/* TOP NAVBAR (desktop + tablet) */}
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-xl border-b border-slate-800/50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-16">
+            {/* Logo */}
+            <button
+              onClick={() => handleScrollTo("home")}
+              className="flex items-center gap-2 group"
             >
-              <RiTwitterXLine />
-            </Link>
-            <Link
-              href="https://www.linkedin.com/in/nayan-kr-bera"
-              aria-label="linkedin"
-              target="_blank"
-              className="hover:text-white transition-colors"
-            >
-              <FaLinkedin />
-            </Link>
-            <Link
-              href="https://github.com/Nayan-Bera"
-              aria-label="github"
-              target="_blank"
-              className="hover:text-white transition-colors"
-            >
-              <FaGithub />
-            </Link>
-            <Link
-              href="https://www.instagram.com/_am_nayan_/?hl=en"
-              aria-label="instagram"
-              target="_blank"
-              className="hover:text-white transition-colors"
-            >
-              <FaInstagram />
-            </Link>
-          </div>
+              <div className="w-8 h-8 rounded-lg bg-linear-to-br from-blue-500 to-cyan-500 flex items-center justify-center">
+                <span className="text-white font-bold text-sm">NB</span>
+              </div>
+              <span className="font-semibold text-base tracking-tight">
+                Nayan Bera
+              </span>
+            </button>
 
-          {/* Mobile menu button */}
-          <button
-            className="md:hidden text-slate-400"
-            onClick={() => setIsOpen((prev) => !prev)}
-            aria-label="Toggle navigation menu"
-          >
-            {isOpen ? (
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            ) : (
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
-            )}
-          </button>
-        </div>
-
-        {/* Mobile dropdown */}
-        {isOpen && (
-          <div className="md:hidden border-t border-slate-800 pb-4">
-            <ul className="flex flex-col gap-3 pt-4 text-sm font-medium">
+            {/* Desktop nav links */}
+            <ul className="hidden md:flex items-center gap-8 text-sm font-medium">
               <li>
-                <Link
-                  href="#about"
-                  onClick={closeMenu}
-                  className="block text-slate-300 hover:text-white transition-colors"
+                <button
+                  onClick={() => handleScrollTo("about")}
+                  className={desktopLinkClasses("about")}
                 >
                   About
-                </Link>
+                </button>
               </li>
               <li>
-                <Link
-                  href="#projects"
-                  onClick={closeMenu}
-                  className="block text-slate-300 hover:text-white transition-colors"
+                <button
+                  onClick={() => handleScrollTo("projects")}
+                  className={desktopLinkClasses("projects")}
                 >
                   Projects
-                </Link>
+                </button>
               </li>
               <li>
-                <Link
-                  href="#experience"
-                  onClick={closeMenu}
-                  className="block text-slate-300 hover:text-white transition-colors"
+                <button
+                  onClick={() => handleScrollTo("experience")}
+                  className={desktopLinkClasses("experience")}
                 >
                   Experience
-                </Link>
+                </button>
               </li>
               <li>
-                <Link
-                  href="#contact"
-                  onClick={closeMenu}
-                  className="inline-flex items-center justify-center w-full px-4 py-2 rounded-lg bg-white text-slate-950 hover:bg-slate-200 transition-colors"
+                <button
+                  onClick={() => handleScrollTo("contact")}
+                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                    activeSection === "contact"
+                      ? "bg-white text-slate-950"
+                      : "bg-slate-100/5 text-slate-200 hover:bg-white hover:text-slate-950"
+                  }`}
                 >
                   Contact
-                </Link>
+                </button>
               </li>
             </ul>
 
-            <div className="flex items-center gap-4 pt-4 text-xl text-slate-400">
+            {/* Desktop social icons */}
+            <div className="hidden md:flex items-center gap-4 text-xl text-slate-400">
               <Link
                 href="https://x.com/NayanBe68620646"
                 aria-label="twitter"
@@ -214,8 +151,46 @@ export const Nav = () => {
               </Link>
             </div>
           </div>
-        )}
+        </div>
+      </nav>
+
+      {/* MOBILE BOTTOM NAVIGATION */}
+      <div className="md:hidden fixed inset-x-0 bottom-4 z-50 flex justify-center pointer-events-none">
+        <div className="relative w-full max-w-xs px-4">
+          {/* Curved pill background */}
+          <div className="pointer-events-auto bg-slate-900/95 border border-slate-700 rounded-3xl shadow-lg shadow-black/40 px-4 py-2 flex items-center justify-between">
+            {[
+              { id: "home", icon: <FiHome /> },
+              { id: "about", icon: <FiUser /> },
+              { id: "projects", icon: <FiFolder /> },
+              { id: "experience", icon: <FiBriefcase /> },
+              { id: "contact", icon: <FiMail /> },
+            ].map((item) => {
+              const isActive = activeSection === item.id;
+
+              return (
+                <button
+                  key={item.id}
+                  onClick={() => handleScrollTo(item.id)}
+                  className={`relative flex items-center justify-center transition-all duration-200 ${
+                    isActive ? "-translate-y-2" : ""
+                  }`}
+                >
+                  <div
+                    className={`flex items-center justify-center text-base w-10 h-10 ${
+                      isActive
+                        ? "bg-cyan-500 text-slate-950 rounded-full shadow-md shadow-emerald-500/50"
+                        : "text-slate-400"
+                    }`}
+                  >
+                    {item.icon}
+                  </div>
+                </button>
+              );
+            })}
+          </div>
+        </div>
       </div>
-    </nav>
+    </>
   );
 };
