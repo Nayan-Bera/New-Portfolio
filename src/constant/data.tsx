@@ -42,7 +42,8 @@ export const PROJECTS = [
       "Razorpay",
       "REST API",
     ],
-    link: "#",
+    link: "",
+    status: "In Development",
   },
   {
     title: "ProctorLive — Online Exam & Monitoring System",
@@ -56,7 +57,8 @@ export const PROJECTS = [
       "JWT",
       "REST API",
     ],
-    link: "#",
+    link: "",
+    status: "In Development",
   },
   {
     title: "StaySphere — PG & Hostel Finder Platform",
@@ -68,17 +70,19 @@ export const PROJECTS = [
       "React.js",
       "RTK Query",
       "Razorpay",
-      "reCAPTCHA",
+      "reCAPTCHA v3",
       "JWT",
     ],
-    link: "#",
+    link: "",
+     status: "Backend Complete",
   },
   {
     title: "NexaFlow CRM — Role-Based Operations & Workflow Manager",
     description:
       "A modular CRM solution featuring role-based access control, task pipelines, team collaboration tools, and automated workflow management with scalable backend architecture.",
     technologies: ["Next.js", "TypeScript", "RBAC", "REST API"],
-    link: "#",
+    link: "https://naystack.vercel.app",
+    status: "Live",
   },
 ];
 

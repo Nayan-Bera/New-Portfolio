@@ -34,10 +34,12 @@ export const Hero = () => (
           </div>
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight mb-4 sm:mb-6">
-            Full-Stack Developer
+           <span>Software Engineer</span>
+            <br />
+            <span> &</span>
             <br />
             <span className=" bg-linear-to-r from-blue-400 via-cyan-400 to-teal-400 bg-clip-text text-transparent">
-              & System Architect
+              System Architect
             </span>
           </h1>
 

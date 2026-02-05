@@ -99,7 +99,7 @@ export const About = () => (
                 <div className="flex justify-between items-center gap-4">
                   <dt className="text-slate-400">Role</dt>
                   <dd className="text-white font-medium text-right">
-                    Web Developer
+                    Software Engineer
                   </dd>
                 </div>
                 <div className="pt-3 border-t border-slate-700/50">
