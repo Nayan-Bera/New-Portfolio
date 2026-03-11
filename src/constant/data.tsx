@@ -42,7 +42,7 @@ export const PROJECTS = [
       "Razorpay",
       "REST API",
     ],
-    link: "",
+    link: "https://tripzy-hotels.vercel.app/",
     status: "In Development",
   },
   {
