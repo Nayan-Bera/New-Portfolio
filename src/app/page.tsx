@@ -5,6 +5,7 @@ import { Experiences } from "./components/experience";
 import { Hero } from "./components/hero";
 import { Nav } from "./components/nav";
 import { ProjectsSection } from "./components/projectSection";
+import { AssistantWidget } from "./components/assistantPortal";
 import { Technologies } from "./components/technologies";
 
 export default function Portfolio() {
@@ -19,6 +20,8 @@ export default function Portfolio() {
         <Experiences />
         <Contact />
       </main>
+
+      <AssistantWidget />
 
       <footer className="border-t border-slate-800 py-6 sm:py-8 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">

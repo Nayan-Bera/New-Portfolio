@@ -1,6 +1,6 @@
 
 import { FaDocker, FaNodeJs, FaPython } from "react-icons/fa6";
-import { RiNextjsFill, RiReactjsLine, RiTwitterXLine } from "react-icons/ri";
+import { RiNextjsFill, RiReactjsLine } from "react-icons/ri";
 import {
   SiGraphql,
   SiMongodb,
@@ -41,7 +41,7 @@ export const PROJECTS = [
       "JWT",
       "Razorpay",
       "REST API",
-    ],
+    ],  
     link: "https://tripzy-hotels.vercel.app/",
     status: "In Development",
   },
