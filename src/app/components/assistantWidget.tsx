@@ -4,41 +4,71 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { FiSend, FiX } from "react-icons/fi";
+import {
+  ChatMessage,
+  useSendChatMessageMutation,
+} from "@/src/store/chatApi";
 
-type Message = {
+type Message = ChatMessage & {
   id: number;
-  role: "assistant" | "user";
-  content: string;
 };
 
 export const AssistantWidget = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [input, setInput] = useState("");
   const messagesEndRef = useRef<HTMLDivElement | null>(null);
+  const [sendChatMessage, { isLoading }] = useSendChatMessageMutation();
   const [messages, setMessages] = useState<Message[]>([
     {
       id: 1,
       role: "assistant",
       content:
-        "Hi, I'm Nayan's assistant. Ask me anything and I'll help once the chat API is connected. Work in progress.",
+        "Hi, I'm Nayan's assistant. Ask me anything about this portfolio, projects, or experience.",
     },
   ]);
 
-  const sendMessage = (query: string) => {
+  const sendMessage = async (query: string) => {
     const trimmed = query.trim();
     if (!trimmed) return;
 
-    setMessages((prev) => [
-      ...prev,
-      { id: prev.length + 1, role: "user", content: trimmed },
-      {
-        id: prev.length + 2,
-        role: "assistant",
-        content: "Chat response will appear here this feature is coming soon.",
-      },
-    ]);
+    const history = messages.map(({ role, content }) => ({ role, content }));
+    const userMessage: Message = {
+      id: Date.now(),
+      role: "user",
+      content: trimmed,
+    };
+
+    setMessages((prev) => [...prev, userMessage]);
     setInput("");
     setIsOpen(true);
+
+    try {
+      const response = await sendChatMessage({
+        message: trimmed,
+        history,
+      }).unwrap();
+
+      setMessages((prev) => [
+        ...prev,
+        {
+          id: Date.now() + 1,
+          role: "assistant",
+          content: response.reply,
+        },
+      ]);
+    } catch (error) {
+      console.error("Assistant chat failed:", error);
+
+      setMessages((prev) => [
+        ...prev,
+        {
+          id: Date.now() + 1,
+          role: "assistant",
+          content:
+            "I couldn't reach the assistant server right now. Please try again in a moment.",
+        },
+      ]);
+    }
   };
 
   useEffect(() => {
@@ -103,7 +133,7 @@ export const AssistantWidget = () => {
               <form
                 onSubmit={(event) => {
                   event.preventDefault();
-                  sendMessage(input);
+                  void sendMessage(input);
                 }}
                 className="flex items-center gap-3 rounded-[1.5rem] border border-slate-800 bg-slate-900/80 px-4 py-3"
               >
@@ -112,16 +142,23 @@ export const AssistantWidget = () => {
                   value={input}
                   onChange={(event) => setInput(event.target.value)}
                   placeholder="Type your message..."
+                  disabled={isLoading}
                   className="flex-1 bg-transparent text-[15px] text-white placeholder:text-slate-500 focus:outline-none"
                 />
                 <button
                   type="submit"
+                  disabled={isLoading || !input.trim()}
                   className="rounded-full bg-cyan-400 p-3 text-slate-950 transition-colors hover:bg-cyan-300"
                   aria-label="Send message"
                 >
                   <FiSend />
                 </button>
               </form>
+              {isLoading && (
+                <p className="mt-3 text-xs text-slate-500">
+                  Assistant is typing...
+                </p>
+              )}
             </div>
           </motion.div>
         )}
