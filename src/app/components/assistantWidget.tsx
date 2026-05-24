@@ -23,7 +23,7 @@ export const AssistantWidget = () => {
       id: 1,
       role: "assistant",
       content:
-        "Hi, I'm Nayan's assistant. Ask me anything about this portfolio, projects, or experience.",
+        "Hi, I'm Nayan's assistant. Ask me anything about this portfolio, projects, or experience. Pls tell your Name?",
     },
   ]);
 
