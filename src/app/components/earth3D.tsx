@@ -112,12 +112,35 @@ const Earth3D: React.FC<EarthProps> = ({ className = "" }) => {
       new THREE.BufferAttribute(positions, 3)
     );
 
+    const particleCanvas = document.createElement("canvas");
+    particleCanvas.width = 64;
+    particleCanvas.height = 64;
+    const particleContext = particleCanvas.getContext("2d");
+    if (particleContext) {
+      const gradient = particleContext.createRadialGradient(
+        32,
+        32,
+        0,
+        32,
+        32,
+        32
+      );
+      gradient.addColorStop(0, "rgba(125, 211, 252, 1)");
+      gradient.addColorStop(0.35, "rgba(34, 211, 238, 0.72)");
+      gradient.addColorStop(1, "rgba(34, 211, 238, 0)");
+      particleContext.fillStyle = gradient;
+      particleContext.fillRect(0, 0, 64, 64);
+    }
+    const particleTexture = new THREE.CanvasTexture(particleCanvas);
+
     const particlesMaterial = new THREE.PointsMaterial({
       color: 0x22d3ee,
-      size: 0.02,
+      size: 0.035,
+      map: particleTexture,
       transparent: true,
       opacity: 0.6,
       blending: THREE.AdditiveBlending,
+      depthWrite: false,
     });
 
     const particles = new THREE.Points(
@@ -183,6 +206,7 @@ const Earth3D: React.FC<EarthProps> = ({ className = "" }) => {
       wireframeMaterial.dispose();
       particlesGeometry.dispose();
       particlesMaterial.dispose();
+      particleTexture.dispose();
     };
   }, []);
 

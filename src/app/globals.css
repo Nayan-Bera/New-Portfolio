@@ -15,6 +15,16 @@ html, body, #__next {
   height: 100%;
 }
 
+html {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+}
+
 body {
   background: #020617;
   -webkit-font-smoothing: antialiased;
@@ -34,6 +44,80 @@ body {
     linear-gradient(90deg, rgba(148, 163, 184, 0.08) 1px, transparent 1px);
   background-size: 72px 72px;
   mask-image: radial-gradient(circle at 50% 12%, black, transparent 72%);
+}
+
+.galaxy-stars {
+  background-image:
+    radial-gradient(circle at 12% 18%, rgba(125, 211, 252, 0.75) 0 1px, transparent 1.6px),
+    radial-gradient(circle at 24% 62%, rgba(255, 255, 255, 0.55) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 42% 28%, rgba(34, 211, 238, 0.55) 0 1px, transparent 1.8px),
+    radial-gradient(circle at 67% 72%, rgba(255, 255, 255, 0.5) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 88% 36%, rgba(94, 234, 212, 0.55) 0 1px, transparent 1.8px);
+  background-size: 260px 260px, 340px 340px, 420px 420px, 300px 300px, 460px 460px;
+  animation: starDrift 28s linear infinite;
+}
+
+.galaxy-stars-far {
+  background-image:
+    radial-gradient(circle at 18% 34%, rgba(255, 255, 255, 0.35) 0 1px, transparent 1.4px),
+    radial-gradient(circle at 54% 12%, rgba(125, 211, 252, 0.32) 0 1px, transparent 1.4px),
+    radial-gradient(circle at 78% 66%, rgba(255, 255, 255, 0.3) 0 1px, transparent 1.4px);
+  background-size: 190px 190px, 280px 280px, 360px 360px;
+  animation: starDrift 44s linear infinite reverse;
+}
+
+.shooting-meteor {
+  height: 2px;
+  opacity: 0;
+  transform: rotate(24deg) translate3d(0, 0, 0);
+  transform-origin: right center;
+  background: linear-gradient(90deg, transparent, rgba(125, 211, 252, 0.18), rgba(255, 255, 255, 0.95));
+  filter: drop-shadow(0 0 12px rgba(125, 211, 252, 0.65));
+  animation-name: meteorFall;
+  animation-timing-function: cubic-bezier(0.16, 0.82, 0.28, 1);
+  animation-iteration-count: infinite;
+}
+
+.shooting-meteor::after {
+  content: "";
+  position: absolute;
+  right: -3px;
+  top: 50%;
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: white;
+  transform: translateY(-50%);
+  box-shadow:
+    0 0 14px rgba(255, 255, 255, 0.85),
+    0 0 34px rgba(34, 211, 238, 0.55);
+}
+
+@keyframes starDrift {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-120px, 80px, 0);
+  }
+}
+
+@keyframes meteorFall {
+  0%,
+  58% {
+    opacity: 0;
+    transform: rotate(24deg) translate3d(0, 0, 0) scaleX(0.85);
+  }
+  64% {
+    opacity: 1;
+  }
+  76% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(24deg) translate3d(62vw, 34vh, 0) scaleX(1.08);
+  }
 }
 
 .cinematic-card {

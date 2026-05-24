@@ -7,15 +7,15 @@ import { motion } from "framer-motion";
 export const Hero = () => (
   <header
     id="home"
-    className="relative min-h-[92vh] pt-28 sm:pt-32 pb-16 sm:pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden"
+    className="relative pt-28 sm:pt-32 pb-16 sm:pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden"
   >
     {/* Responsive 3D Earth background */}
     <div className="pointer-events-none absolute inset-0">
-      <div className="hidden sm:block absolute top-1/2 -translate-y-1/2 left-[10%] md:left-[18%] w-[420px] h-[260px] md:w-[680px] md:h-[420px] lg:w-[980px] lg:h-[600px] opacity-30">
+      <div className="hidden sm:block absolute top-1/2 -translate-y-1/2 left-[5%] md:left-[10%] w-[420px] h-[260px] md:w-[640px] md:h-[380px] lg:w-[900px] lg:h-[540px] opacity-35">
         <Earth3D />
       </div>
       {/* Smaller earth for extra small devices, placed at bottom */}
-      <div className="sm:hidden absolute bottom-1/2 left-1/2 -translate-x-1/2 w-[340px] h-[240px] opacity-35">
+      <div className="sm:hidden absolute bottom-1/2 left-1/2 -translate-x-1/2 w-[320px] h-[220px] opacity-40">
         <Earth3D />
       </div>
     </div>
@@ -36,8 +36,8 @@ export const Hero = () => (
             Available for new opportunities
           </div>
 
-          <h1 className="max-w-4xl text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-black tracking-tight mb-4 sm:mb-6">
-           <span className="text-white drop-shadow-[0_18px_52px_rgba(125,211,252,0.12)]">Software Engineer</span>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight mb-4 sm:mb-6">
+           <span>Software Engineer</span>
             <br />
             <span> &</span>
             <br />
@@ -46,7 +46,7 @@ export const Hero = () => (
             </span>
           </h1>
 
-          <p className="text-base sm:text-lg text-slate-300/85 leading-8 mb-6 sm:mb-8 max-w-2xl">
+          <p className="text-base sm:text-lg text-slate-400 leading-relaxed mb-6 sm:mb-8 max-w-xl">
             {HERO_CONTENT}
           </p>
 
@@ -73,8 +73,7 @@ export const Hero = () => (
           transition={{ duration: 0.6, delay: 0.2 }}
           className="relative order-2"
         >
-          <div className="absolute -inset-6 rounded-[2rem] bg-cyan-400/5 blur-3xl" />
-          <div className="relative grid grid-cols-2 gap-3 sm:gap-4">
+          <div className="grid grid-cols-2 gap-3 sm:gap-4">
             {[
               {
                 label: "Real-Time Systems",
@@ -95,8 +94,7 @@ export const Hero = () => (
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 + i * 0.1 }}
-                whileHover={{ y: -8, rotate: i % 2 === 0 ? -1.5 : 1.5 }}
-                className="cinematic-card min-h-36 p-4 sm:p-5 md:p-6 rounded-2xl bg-slate-950/55 border border-slate-700/60 hover:border-cyan-300/50 transition-all group cursor-default backdrop-blur-xl shadow-[0_18px_70px_-42px_rgba(34,211,238,0.45)]"
+                className="cinematic-card p-3 sm:p-4 md:p-5 rounded-xl bg-slate-800/50 border border-slate-700/50 hover:border-cyan-300/50 transition-all group cursor-default backdrop-blur"
               >
                 <h3 className="text-xs sm:text-sm md:text-base font-semibold text-white mb-1.5 sm:mb-2 group-hover:text-cyan-400 transition-colors">
                   {item.label}

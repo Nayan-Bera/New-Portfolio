@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 export const Experiences = () => (
   <section
     id="experience"
-    className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-slate-950"
+    className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-slate-950/45 backdrop-blur-[1px]"
   >
     <div className="max-w-7xl mx-auto">
       <div className="flex items-center gap-3 mb-8 sm:mb-10">

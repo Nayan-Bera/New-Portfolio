@@ -25,7 +25,7 @@ export const ProjectsSection = () => {
   return (
     <section
       id="projects"
-      className="relative py-20 sm:py-24 px-4 sm:px-6 lg:px-8 bg-slate-950/55 overflow-hidden"
+      className="relative py-20 sm:py-24 px-4 sm:px-6 lg:px-8 bg-slate-950/40 backdrop-blur-[1px] overflow-hidden"
     >
       <div className="pointer-events-none absolute left-1/2 top-10 h-80 w-[min(70vw,48rem)] -translate-x-1/2 rounded-full bg-cyan-400/10 blur-3xl" />
       <div className="relative max-w-7xl mx-auto">
