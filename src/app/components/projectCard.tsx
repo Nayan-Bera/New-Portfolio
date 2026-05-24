@@ -72,17 +72,6 @@ const Card = ({
     <div className="pointer-events-none absolute -right-16 -top-20 h-44 w-44 rounded-full bg-cyan-400/10 blur-3xl transition-opacity duration-300 group-hover:opacity-100" />
     <div className="pointer-events-none absolute bottom-0 left-0 h-px w-full bg-linear-to-r from-transparent via-cyan-300/50 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
-    <div className="mb-5 flex items-center justify-between gap-3">
-      <span className="rounded-full border border-cyan-300/20 bg-cyan-300/10 px-3 py-1 text-[11px] font-semibold text-cyan-100">
-        PROJECT {String(project.displayIndex ?? 0).padStart(2, "0")}
-      </span>
-      {isLive && (
-        <span className="rounded-full border border-emerald-300/20 bg-emerald-300/10 px-3 py-1 text-[11px] font-semibold text-emerald-200">
-          Live
-        </span>
-      )}
-    </div>
-
     <div className="mb-4">
       <div className="flex items-start justify-between gap-4">
         <h3 className="text-lg font-semibold leading-snug text-white sm:text-xl">
