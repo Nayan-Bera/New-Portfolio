@@ -25,15 +25,22 @@ export const ProjectsSection = () => {
   return (
     <section
       id="projects"
-      className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-slate-900/30"
+      className="relative py-20 sm:py-24 px-4 sm:px-6 lg:px-8 bg-slate-950/55 overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto">
-        <div className="flex items-center gap-3 mb-8 sm:mb-12">
+      <div className="pointer-events-none absolute left-1/2 top-10 h-80 w-[min(70vw,48rem)] -translate-x-1/2 rounded-full bg-cyan-400/10 blur-3xl" />
+      <div className="relative max-w-7xl mx-auto">
+        <div className="flex items-center gap-3 mb-5 sm:mb-6">
           <div className="h-px flex-1 bg-linear-to-r from-transparent via-slate-700 to-transparent" />
           <h2 className="text-xs sm:text-sm font-semibold text-slate-400 uppercase tracking-wider">
             Selected Projects
           </h2>
           <div className="h-px flex-1 bg-linear-to-r from-transparent via-slate-700 to-transparent" />
+        </div>
+
+        <div className="mx-auto mb-10 max-w-3xl text-center sm:mb-14">
+          <p className="text-2xl font-bold tracking-tight text-white sm:text-4xl">
+            Product-minded builds with live systems, data flows, and rollout controls.
+          </p>
         </div>
 
         <div className="grid gap-6 sm:gap-8 lg:grid-cols-2">

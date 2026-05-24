@@ -16,11 +16,81 @@ html, body, #__next {
 }
 
 body {
-  background: linear-gradient(180deg, var(--bg-start), var(--bg-mid) 45%, var(--bg-end));
+  background: #020617;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #e6eef8;
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+::selection {
+  background: rgba(34, 211, 238, 0.35);
+  color: #ffffff;
+}
+
+.cinematic-grid {
+  background-image:
+    linear-gradient(rgba(148, 163, 184, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.08) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: radial-gradient(circle at 50% 12%, black, transparent 72%);
+}
+
+.cinematic-card {
+  position: relative;
+  isolation: isolate;
+}
+
+.cinematic-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(34, 211, 238, 0.28), transparent 34%, rgba(59, 130, 246, 0.18));
+  opacity: 0;
+  transition: opacity 240ms ease;
+}
+
+.cinematic-card:hover::before {
+  opacity: 1;
+}
+
+.scanline {
+  position: relative;
+  overflow: hidden;
+}
+
+.scanline::after {
+  content: "";
+  position: absolute;
+  inset: -40% auto -40% -35%;
+  width: 34%;
+  transform: rotate(18deg);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.12), transparent);
+  animation: scanSweep 5.5s ease-in-out infinite;
+}
+
+@keyframes scanSweep {
+  0%,
+  42% {
+    transform: translateX(0) rotate(18deg);
+  }
+  70%,
+  100% {
+    transform: translateX(430%) rotate(18deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 .initials {

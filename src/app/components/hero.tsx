@@ -7,18 +7,21 @@ import { motion } from "framer-motion";
 export const Hero = () => (
   <header
     id="home"
-    className="relative pt-28 sm:pt-32 pb-16 sm:pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden"
+    className="relative min-h-[92vh] pt-28 sm:pt-32 pb-16 sm:pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden"
   >
     {/* Responsive 3D Earth background */}
     <div className="pointer-events-none absolute inset-0">
-      <div className="hidden sm:block absolute top-1/2 -translate-y-1/2 left-[5%] md:left-[10%] w-[420px] h-[260px] md:w-[640px] md:h-[380px] lg:w-[900px] lg:h-[540px] opacity-35">
+      <div className="hidden sm:block absolute top-1/2 -translate-y-1/2 left-[10%] md:left-[18%] w-[420px] h-[260px] md:w-[680px] md:h-[420px] lg:w-[980px] lg:h-[600px] opacity-30">
         <Earth3D />
       </div>
       {/* Smaller earth for extra small devices, placed at bottom */}
-      <div className="sm:hidden absolute bottom-1/2 left-1/2 -translate-x-1/2 w-[320px] h-[220px] opacity-40">
+      <div className="sm:hidden absolute bottom-1/2 left-1/2 -translate-x-1/2 w-[340px] h-[240px] opacity-35">
         <Earth3D />
       </div>
     </div>
+
+    <div className="pointer-events-none absolute left-0 top-24 h-48 w-px bg-linear-to-b from-transparent via-cyan-400/60 to-transparent" />
+    <div className="pointer-events-none absolute bottom-10 right-[12%] hidden h-24 w-24 rounded-full border border-cyan-300/20 sm:block" />
 
     <div className="relative max-w-7xl mx-auto">
       <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
@@ -28,35 +31,35 @@ export const Hero = () => (
           transition={{ duration: 0.5 }}
           className="order-1"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-800/60 border border-slate-700/60 text-[11px] sm:text-xs font-medium text-slate-300 mb-5 sm:mb-6">
+          <div className="inline-flex items-center gap-2 rounded-full border border-cyan-300/20 bg-cyan-300/10 px-3 py-1.5 text-[11px] sm:text-xs font-medium text-cyan-50 shadow-[0_0_32px_rgba(34,211,238,0.12)] backdrop-blur mb-5 sm:mb-6">
             <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
             Available for new opportunities
           </div>
 
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight mb-4 sm:mb-6">
-           <span>Software Engineer</span>
+          <h1 className="max-w-4xl text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-black tracking-tight mb-4 sm:mb-6">
+           <span className="text-white drop-shadow-[0_18px_52px_rgba(125,211,252,0.12)]">Software Engineer</span>
             <br />
             <span> &</span>
             <br />
-            <span className=" bg-linear-to-r from-blue-400 via-cyan-400 to-teal-400 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-blue-300 via-cyan-300 to-teal-300 bg-clip-text text-transparent">
               System Architect
             </span>
           </h1>
 
-          <p className="text-base sm:text-lg text-slate-400 leading-relaxed mb-6 sm:mb-8 max-w-xl">
+          <p className="text-base sm:text-lg text-slate-300/85 leading-8 mb-6 sm:mb-8 max-w-2xl">
             {HERO_CONTENT}
           </p>
 
           <div className="flex flex-wrap gap-3 sm:gap-4">
             <Link
               href="/resume.pdf"
-              className="px-5 sm:px-6 py-2.5 sm:py-3 rounded-lg bg-white text-slate-950 text-sm sm:text-base font-medium hover:bg-slate-200 transition-all hover:shadow-lg hover:shadow-white/20"
+              className="scanline px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl bg-white text-slate-950 text-sm sm:text-base font-semibold hover:bg-slate-200 transition-all hover:shadow-lg hover:shadow-white/20"
             >
               View Resume
             </Link>
             <Link
               href="#contact"
-              className="px-5 sm:px-6 py-2.5 sm:py-3 rounded-lg border border-slate-700 text-slate-300 text-sm sm:text-base font-medium hover:bg-slate-800 hover:border-slate-600 transition-all"
+              className="px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl border border-cyan-300/20 bg-slate-950/30 text-slate-200 text-sm sm:text-base font-semibold backdrop-blur hover:bg-cyan-300/10 hover:border-cyan-300/50 transition-all"
             >
               Get in Touch
             </Link>
@@ -70,7 +73,8 @@ export const Hero = () => (
           transition={{ duration: 0.6, delay: 0.2 }}
           className="relative order-2"
         >
-          <div className="grid grid-cols-2 gap-3 sm:gap-4">
+          <div className="absolute -inset-6 rounded-[2rem] bg-cyan-400/5 blur-3xl" />
+          <div className="relative grid grid-cols-2 gap-3 sm:gap-4">
             {[
               {
                 label: "Real-Time Systems",
@@ -91,7 +95,8 @@ export const Hero = () => (
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 + i * 0.1 }}
-                className="p-3 sm:p-4 md:p-5 rounded-xl bg-slate-800/50 border border-slate-700/50 hover:border-slate-600 transition-all group cursor-default backdrop-blur"
+                whileHover={{ y: -8, rotate: i % 2 === 0 ? -1.5 : 1.5 }}
+                className="cinematic-card min-h-36 p-4 sm:p-5 md:p-6 rounded-2xl bg-slate-950/55 border border-slate-700/60 hover:border-cyan-300/50 transition-all group cursor-default backdrop-blur-xl shadow-[0_18px_70px_-42px_rgba(34,211,238,0.45)]"
               >
                 <h3 className="text-xs sm:text-sm md:text-base font-semibold text-white mb-1.5 sm:mb-2 group-hover:text-cyan-400 transition-colors">
                   {item.label}

@@ -7,12 +7,14 @@ import { Nav } from "./components/nav";
 import { ProjectsSection } from "./components/projectSection";
 import { AssistantWidget } from "./components/assistantPortal";
 import { Technologies } from "./components/technologies";
+import { CinematicLayer } from "./components/cinematicLayer";
 
 export default function Portfolio() {
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100">
+    <div className="relative min-h-screen overflow-hidden bg-slate-950 text-slate-100">
+      <CinematicLayer />
       <Nav />
-      <main>
+      <main className="relative z-10">
         <Hero />
         <About />
         <Technologies />
@@ -23,7 +25,7 @@ export default function Portfolio() {
 
       <AssistantWidget />
 
-      <footer className="border-t border-slate-800 py-6 sm:py-8 px-4 sm:px-6 lg:px-8">
+      <footer className="relative z-10 border-t border-slate-800/70 bg-slate-950/70 py-6 sm:py-8 px-4 sm:px-6 lg:px-8 backdrop-blur">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row items-center justify-between gap-3 md:gap-4">
             <div className="text-xs sm:text-sm text-slate-400 text-center md:text-left">
