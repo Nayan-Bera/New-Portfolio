@@ -31,6 +31,7 @@ export const techs = [
 
 export const PROJECTS = [
   {
+    displayIndex: 1,
     title: "Tripzy — Smart Hotel Booking System",
     description:
       "A full hotel booking platform with automated document verification, secure JWT-based access, digital check-ins, and integrated Razorpay payment workflows.",
@@ -46,6 +47,7 @@ export const PROJECTS = [
     status: "In Development",
   },
   {
+    displayIndex: 5,
     title: "ProctorLive — Online Exam & Monitoring System",
     description:
       "A secure examination platform with live monitoring, keyboard lock, candidate event tracking, quick results, and real-time updates powered by WebSockets and JWT.",
@@ -61,6 +63,7 @@ export const PROJECTS = [
     status: "In Development",
   },
   {
+    displayIndex: 3,
     title: "StaySphere — PG & Hostel Finder Platform",
     description:
       "A property discovery and management platform enabling PG/hostel providers to manage listings while users search, filter, and book stays with secure payments and reCAPTCHA-protected authentication.",
@@ -77,11 +80,21 @@ export const PROJECTS = [
      status: "Backend Complete",
   },
   {
+    displayIndex: 4,
     title: "NexaFlow CRM — Role-Based Operations & Workflow Manager",
     description:
       "A modular CRM solution featuring role-based access control, task pipelines, team collaboration tools, and automated workflow management with scalable backend architecture.",
     technologies: ["Next.js", "TypeScript", "RBAC", "REST API"],
     link: "https://naystack.vercel.app",
+    status: "Live",
+  },
+  {
+    displayIndex: 1,
+    title: "My Chat Buddy — AI Chat Companion",
+    description:
+      "Helps teams launch project-scoped chatbot workspaces with knowledge uploads, API delivery, widget embeds, and usage controls from one unified dashboard.",
+    technologies: ["Next.js", "React.js", "TypeScript", "AI Chat", "Vercel"],
+    link: "https://my-chat-buddy-web.vercel.app/",
     status: "Live",
   },
 ];
