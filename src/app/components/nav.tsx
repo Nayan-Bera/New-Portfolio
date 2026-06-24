@@ -17,7 +17,7 @@ const SECTIONS = [
 export const Nav = () => {
   const [activeSection, setActiveSection] = useState<string>("home");
 
-  // Scroll spy – detect which section is in view
+  // Scroll spy: detect which section is in view
   useEffect(() => {
     const ids = SECTIONS.map((s) => s.id);
     const elements = ids

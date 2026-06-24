@@ -37,15 +37,21 @@ export const About = () => (
                 </h3>
                 <ul className="space-y-2 text-xs sm:text-sm text-slate-400">
                   <li className="flex items-start gap-2">
-                    <span className="text-cyan-400 mt-1">▸</span>
+                    <span className="text-cyan-400 mt-1" aria-hidden="true">
+                      &gt;
+                    </span>
                     Backend API development and structured workflow engineering
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-cyan-400 mt-1">▸</span>
+                    <span className="text-cyan-400 mt-1" aria-hidden="true">
+                      &gt;
+                    </span>
                     System architecture, module design, and schema modeling
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-cyan-400 mt-1">▸</span>
+                    <span className="text-cyan-400 mt-1" aria-hidden="true">
+                      &gt;
+                    </span>
                     Secure integrations including authentication and payment
                     services
                   </li>
@@ -60,16 +66,22 @@ export const About = () => (
                 </h3>
                 <ul className="space-y-2 text-xs sm:text-sm text-slate-400">
                   <li className="flex items-start gap-2">
-                    <span className="text-blue-400 mt-1">▸</span>
+                    <span className="text-blue-400 mt-1" aria-hidden="true">
+                      &gt;
+                    </span>
                     Real-time features built with WebSockets and event workflows
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-blue-400 mt-1">▸</span>
+                    <span className="text-blue-400 mt-1" aria-hidden="true">
+                      &gt;
+                    </span>
                     SQL/NoSQL data modeling, optimization, and performance
                     tuning
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-blue-400 mt-1">▸</span>
+                    <span className="text-blue-400 mt-1" aria-hidden="true">
+                      &gt;
+                    </span>
                     DevOps processes with Docker, Dokploy, and Nixpacks
                     deployments
                   </li>

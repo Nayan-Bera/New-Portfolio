@@ -32,7 +32,7 @@ export const techs = [
 export const PROJECTS = [
   {
     displayIndex: 1,
-    title: "Tripzy — Smart Hotel Booking System",
+    title: "Tripzy - Smart Hotel Booking System",
     description:
       "A full hotel booking platform with automated document verification, secure JWT-based access, digital check-ins, and integrated Razorpay payment workflows.",
     technologies: [
@@ -48,7 +48,7 @@ export const PROJECTS = [
   },
   {
     displayIndex: 5,
-    title: "ProctorLive — Online Exam & Monitoring System",
+    title: "ProctorLive - Online Exam & Monitoring System",
     description:
       "A secure examination platform with live monitoring, keyboard lock, candidate event tracking, quick results, and real-time updates powered by WebSockets and JWT.",
     technologies: [
@@ -64,7 +64,7 @@ export const PROJECTS = [
   },
   {
     displayIndex: 3,
-    title: "StaySphere — PG & Hostel Finder Platform",
+    title: "StaySphere - PG & Hostel Finder Platform",
     description:
       "A property discovery and management platform enabling PG/hostel providers to manage listings while users search, filter, and book stays with secure payments and reCAPTCHA-protected authentication.",
     technologies: [
@@ -82,7 +82,7 @@ export const PROJECTS = [
   },
   {
     displayIndex: 4,
-    title: "NexaFlow CRM — Role-Based Operations & Workflow Manager",
+    title: "NexaFlow CRM - Role-Based Operations & Workflow Manager",
     description:
       "A modular CRM solution featuring role-based access control, task pipelines, team collaboration tools, and automated workflow management with scalable backend architecture.",
     technologies: ["Next.js", "TypeScript", "RBAC", "REST API"],
@@ -91,7 +91,7 @@ export const PROJECTS = [
   },
   {
     displayIndex: 1,
-    title: "My Chat Buddy — AI Chat Companion",
+    title: "My Chat Buddy - AI Chat Companion",
     description:
       "Helps teams launch project-scoped chatbot workspaces with knowledge uploads, API delivery, widget embeds, and usage controls from one unified dashboard.",
     technologies: ["Next.js", "React.js", "TypeScript", "AI Chat", "Vercel"],
@@ -104,7 +104,7 @@ export const EXPERIENCE = [
   {
     role: "Full-Stack Web Developer",
     company: "Maity Innovations Pvt Ltd",
-    period: "2025 — Present",
+    period: "2025 - Present",
     dotClass: "bg-cyan-400",
     companyClass: "text-cyan-400",
     description: [
@@ -118,7 +118,7 @@ export const EXPERIENCE = [
   {
     role: "Web Developer Intern",
     company: "Maity Innovations Pvt Ltd",
-    period: "2024 — 2025",
+    period: "2024 - 2025",
     dotClass: "bg-blue-400",
     companyClass: "text-blue-400",
     description: [

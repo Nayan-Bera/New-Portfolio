@@ -29,13 +29,13 @@ export default function Portfolio() {
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row items-center justify-between gap-3 md:gap-4">
             <div className="text-xs sm:text-sm text-slate-400 text-center md:text-left">
-              © {new Date().getFullYear()} Nayan Kr Bera. All rights reserved.
+              &copy; {new Date().getFullYear()} Nayan Kr Bera. All rights reserved.
             </div>
             <div className="flex flex-wrap items-center justify-center md:justify-end gap-2 sm:gap-3 text-[11px] sm:text-sm text-slate-500">
               <span>Built with Next.js</span>
-              <span>•</span>
+              <span aria-hidden="true">/</span>
               <span>Tailwind CSS</span>
-              <span>•</span>
+              <span aria-hidden="true">/</span>
               <span>Framer Motion</span>
             </div>
           </div>
